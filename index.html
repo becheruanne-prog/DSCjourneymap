@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>DSC Alliance — User Journey Map · Brave New Media</title>
+<title>DSC Alliance — Journey Map (Simplified) · Brave New Media</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -21,149 +21,103 @@ html,body{background:#e5e5e5;font-family:'Inter',sans-serif;color:var(--charcoal
 body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap:24px}
 
 .sheet{
-  width:1280px;
+  width:1180px;
   background:var(--white);
   position:relative;
   box-shadow:0 1px 3px rgba(0,0,0,.18),0 8px 28px rgba(0,0,0,.10);
-  padding:64px 72px 72px;
+  padding:56px 64px 64px;
 }
 
 /* ============ HEADER ============ */
-.head{position:relative;margin-bottom:40px}
-.head .rule-top{width:48px;height:2px;background:var(--chartreuse);margin-bottom:18px}
-.head .eyebrow{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:14px}
-.head h1{font-size:48px;font-weight:700;line-height:1.02;letter-spacing:-.02em;color:var(--charcoal);margin-bottom:14px;text-wrap:balance;max-width:24ch}
+.head{position:relative;margin-bottom:36px}
+.head .rule-top{width:48px;height:2px;background:var(--chartreuse);margin-bottom:16px}
+.head .eyebrow{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:12px}
+.head h1{font-size:42px;font-weight:700;line-height:1.04;letter-spacing:-.02em;color:var(--charcoal);margin-bottom:12px;text-wrap:balance;max-width:24ch}
 .head h1 em{font-style:italic;color:var(--olive)}
-.head .sub{font-size:16px;font-style:italic;color:var(--olive);max-width:80ch;line-height:1.5}
+.head .sub{font-size:15px;font-style:italic;color:var(--olive);max-width:80ch;line-height:1.5}
 .head .meta{position:absolute;right:0;top:0;text-align:right;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--olive);line-height:2;font-weight:600}
 .head .meta strong{color:var(--charcoal)}
 
-/* ============ LEGEND ============ */
-.legend{display:flex;gap:28px;margin:14px 0 34px;padding:16px 20px;background:var(--paper);border-left:3px solid var(--chartreuse);font-size:11px;flex-wrap:wrap}
-.legend-item{display:flex;align-items:center;gap:8px}
-.swatch{width:14px;height:14px;display:inline-block;border:1px solid var(--charcoal)}
-.swatch.s-layer{background:var(--white)}
-.swatch.s-journey{background:var(--paper)}
-.swatch.s-state{background:var(--chartreuse)}
-.swatch.s-compound{background:var(--olive)}
-.swatch.s-action{background:var(--charcoal)}
-.legend-label{font-weight:500;color:var(--charcoal)}
+/* ============ SECTION HEADERS ============ */
+.section{margin-top:56px}
+.section-eyebrow{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:8px}
+.section-h2{font-size:26px;font-weight:700;color:var(--charcoal);letter-spacing:-.015em;line-height:1.1;margin-bottom:6px}
+.section-h2 em{font-style:italic;color:var(--olive)}
+.section-rule{width:36px;height:2px;background:var(--chartreuse);margin:12px 0 22px}
+.section-lead{font-size:13px;font-style:italic;color:var(--olive);max-width:80ch;line-height:1.5;margin-bottom:24px}
 
-/* ============ MAP CANVAS ============ */
-.map{position:relative;width:100%;height:1640px;background:var(--white)}
-.map svg.wires{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+/* ============ THE BIG PICTURE ============ */
+.bigpic{display:grid;grid-template-columns:1fr 60px 1fr 60px 1fr;gap:0;align-items:stretch}
+.bigpic-col{padding:24px 22px;border:1px solid var(--charcoal);background:var(--paper)}
+.bigpic-col.dest{background:var(--chartreuse)}
+.bigpic-arrow{display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--olive);font-weight:300}
+.bigpic-col .bp-tag{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);margin-bottom:8px}
+.bigpic-col .bp-title{font-size:16px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:10px}
+.bigpic-col ul{list-style:none}
+.bigpic-col li{font-size:11px;line-height:1.5;color:var(--charcoal);padding:3px 0;padding-left:14px;position:relative}
+.bigpic-col li::before{content:'';position:absolute;left:0;top:.65em;width:8px;height:1px;background:var(--olive)}
 
-/* nodes share styles */
-.node{position:absolute;z-index:2;background:var(--white);border:1.5px solid var(--charcoal);padding:12px 14px;line-height:1.35}
-.node .tag{font-size:8.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--olive);margin-bottom:5px}
-.node .title{font-size:13px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:6px;letter-spacing:-.005em}
-.node .desc{font-size:10px;line-height:1.45;color:var(--charcoal);opacity:.85;font-weight:400}
-.node .desc strong{color:var(--olive);font-weight:700}
+/* ============ JOURNEYS GRID ============ */
+.journeys{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.j-card{border:1px solid var(--charcoal);background:var(--white);position:relative;display:flex;flex-direction:column}
+.j-card .j-head{padding:18px 22px;background:var(--charcoal);color:var(--white)}
+.j-card.j1 .j-head{background:var(--olive)}
+.j-card.j2 .j-head{background:var(--charcoal)}
+.j-card.j3 .j-head{background:var(--white);color:var(--charcoal);border-bottom:1px solid var(--charcoal)}
+.j-card .j-num{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--chartreuse);margin-bottom:6px}
+.j-card.j3 .j-num{color:var(--olive)}
+.j-card .j-name{font-size:18px;font-weight:700;line-height:1.15;letter-spacing:-.005em;margin-bottom:6px}
+.j-card .j-tag{font-family:monospace;font-size:11px;color:var(--chartreuse);background:rgba(0,0,0,.18);padding:2px 8px;display:inline-block;letter-spacing:.02em}
+.j-card.j3 .j-tag{color:var(--olive);background:var(--paper)}
+.j-card .j-body{padding:18px 22px;flex:1;display:flex;flex-direction:column}
+.j-card .j-who{font-size:11px;line-height:1.5;color:var(--charcoal);margin-bottom:14px;padding-bottom:14px;border-bottom:1px dotted var(--line)}
+.j-card .j-who strong{color:var(--olive);font-weight:700}
+.j-card .j-steps-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);margin-bottom:10px}
+.j-card .j-steps{display:flex;flex-direction:column;gap:8px;margin-bottom:16px;flex:1}
+.j-card .j-step{display:grid;grid-template-columns:38px 1fr;gap:10px;align-items:start}
+.j-card .j-step .d{font-size:10px;font-weight:700;color:var(--olive);font-family:monospace;padding-top:1px;letter-spacing:.05em}
+.j-card .j-step .t{font-size:11px;line-height:1.4;color:var(--charcoal)}
+.j-card .j-exits{padding-top:14px;border-top:1px dotted var(--line);font-size:10px;line-height:1.55;color:var(--charcoal)}
+.j-card .j-exits strong{color:var(--olive);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:9px;display:block;margin-bottom:6px}
 
-/* layer rails (column headers) */
-.layer-rail{
-  position:absolute;
-  top:0;
-  width:280px;
-  padding:14px 18px;
-  background:var(--olive);
-  color:var(--white);
-  z-index:3;
-}
-.layer-rail .lnum{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--chartreuse);margin-bottom:6px}
-.layer-rail .ltitle{font-size:16px;font-weight:700;line-height:1.15;letter-spacing:-.005em}
-.layer-rail .lsub{font-size:10px;font-style:italic;color:var(--chartreuse);margin-top:6px;line-height:1.4}
+/* ============ QUALIFIERS TABLE ============ */
+.qual{border:1px solid var(--charcoal)}
+.qual-row{display:grid;grid-template-columns:50px 1fr 40px 1fr;gap:0;border-top:1px solid var(--line)}
+.qual-row.head{background:var(--olive);color:var(--white);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;border-top:none}
+.qual-row.head > div{padding:12px 16px}
+.qual-row > div{padding:14px 16px;font-size:11.5px;line-height:1.45;display:flex;align-items:center}
+.qual-row .qn{font-family:monospace;font-weight:700;color:var(--olive);font-size:10px;background:var(--paper);justify-content:center}
+.qual-row .qif{color:var(--charcoal)}
+.qual-row .qarr{justify-content:center;color:var(--olive);font-size:18px;font-weight:300;background:var(--paper)}
+.qual-row .qthen{color:var(--charcoal);font-weight:600}
+.qual-row .qthen strong{color:var(--olive);font-weight:700}
+.qual-row:nth-child(odd):not(.head){background:#fbfbf6}
 
-/* entry node (capture form) */
-.node.entry{background:var(--paper);border:1.5px dashed var(--olive);width:240px}
-.node.entry .title{color:var(--olive)}
+/* ============ DELIVERABLES ============ */
+.delivery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.del-card{border:1px solid var(--charcoal);background:var(--white);padding:22px 22px;border-left:5px solid var(--chartreuse);text-align:left}
+.del-card .dnum{font-size:42px;font-weight:700;color:var(--olive);line-height:1;letter-spacing:-.02em;margin-bottom:8px}
+.del-card .dname{font-size:13px;font-weight:700;color:var(--charcoal);line-height:1.25;margin-bottom:6px}
+.del-card .dwhen{font-size:10.5px;color:var(--charcoal);line-height:1.5;font-style:italic;color:var(--olive)}
 
-/* journey badges */
-.node.journey{background:var(--charcoal);color:var(--white);width:240px;border-color:var(--charcoal)}
-.node.journey .tag{color:var(--chartreuse)}
-.node.journey .title{color:var(--white);font-size:14px}
-.node.journey .desc{color:var(--white);opacity:.85}
+.delivery-total{margin-top:14px;padding:18px 22px;background:var(--charcoal);color:var(--white);display:flex;justify-content:space-between;align-items:baseline}
+.delivery-total .dt-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--chartreuse)}
+.delivery-total .dt-num{font-size:32px;font-weight:700;color:var(--white);letter-spacing:-.02em}
+.delivery-total .dt-sub{font-size:11px;font-style:italic;color:var(--chartreuse);max-width:36ch;text-align:right}
 
-/* state node (member states) */
-.node.state{background:var(--chartreuse);border-color:var(--charcoal);width:200px}
-.node.state .tag{color:var(--charcoal)}
-
-/* compound (high-leverage) */
-.node.compound{background:var(--olive);color:var(--white);border-color:var(--charcoal);width:260px}
-.node.compound .tag{color:var(--chartreuse)}
-.node.compound .title{color:var(--white);font-size:13px}
-.node.compound .desc{color:var(--white);opacity:.9}
-
-/* action node */
-.node.action{background:var(--white);width:230px;border:1.5px solid var(--olive);border-left:5px solid var(--chartreuse)}
-.node.action .tag{color:var(--olive)}
-
-/* new email pill */
-.pill-new{
-  display:inline-block;
-  background:var(--chartreuse);color:var(--charcoal);
-  font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
-  padding:2px 7px;margin-top:6px;border:1px solid var(--charcoal);
-}
-
-/* connector dot */
-.dot{position:absolute;width:10px;height:10px;background:var(--chartreuse);border:1.5px solid var(--charcoal);border-radius:50%;z-index:3;transform:translate(-50%,-50%)}
-
-/* ============ COMPOUND LEDGER ============ */
-.ledger{margin-top:56px}
-.section-head{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:10px}
-.section-h2{font-size:30px;font-weight:700;color:var(--charcoal);letter-spacing:-.015em;line-height:1.05;margin-bottom:8px}
-.section-rule{width:48px;height:2px;background:var(--chartreuse);margin:14px 0 28px}
-.section-lead{font-size:14px;font-style:italic;color:var(--olive);max-width:80ch;line-height:1.5;margin-bottom:24px}
-
-.ledger-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.ledger-card{padding:22px 22px;border:1px solid var(--charcoal);background:var(--white);position:relative}
-.ledger-card.tier-1{border-left:5px solid var(--chartreuse)}
-.ledger-card .num{font-size:34px;font-weight:700;color:var(--olive);line-height:1;letter-spacing:-.02em;margin-bottom:6px}
-.ledger-card .name{font-size:15px;font-weight:700;color:var(--charcoal);line-height:1.2;letter-spacing:-.005em;margin-bottom:10px}
-.ledger-card .def{font-size:10.5px;line-height:1.5;color:var(--charcoal);margin-bottom:10px}
-.ledger-card .def strong{color:var(--olive)}
-.ledger-card .means{font-size:10.5px;line-height:1.5;color:var(--charcoal);font-style:italic;margin-bottom:12px;padding-top:10px;border-top:1px dotted var(--line)}
-.ledger-card .treat{font-size:10.5px;line-height:1.5;color:var(--charcoal)}
-.ledger-card .treat strong{color:var(--charcoal);font-weight:700}
-.ledger-card .footer{margin-top:14px;padding-top:10px;border-top:1px dotted var(--line);display:flex;justify-content:space-between;align-items:center;font-size:9px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--olive)}
-.ledger-card .footer .build{color:var(--charcoal)}
-
-/* ============ NEW EMAILS STRIP ============ */
-.emails{margin-top:48px;padding:28px 32px;background:var(--charcoal);color:var(--white)}
-.emails .ehead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:22px}
-.emails .ehead h3{font-size:22px;font-weight:700;color:var(--white);letter-spacing:-.01em}
-.emails .ehead .e-eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--chartreuse);font-weight:700}
-.emails-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.email-card{background:rgba(255,255,255,.04);border:1px solid rgba(218,221,1,.25);padding:18px 18px}
-.email-card .ecode{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--chartreuse);font-weight:700;margin-bottom:6px}
-.email-card .ename{font-size:14px;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:8px}
-.email-card .esubj{font-size:11px;font-style:italic;color:var(--chartreuse);margin-bottom:10px;line-height:1.4}
-.email-card .ewho{font-size:10px;color:var(--white);opacity:.85;line-height:1.5;margin-bottom:8px}
-.email-card .ewho strong{color:var(--chartreuse);font-weight:600}
-.email-card .ewhen{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--chartreuse);font-weight:700;padding-top:8px;border-top:1px dotted rgba(218,221,1,.3)}
-
-/* ============ TIER FOOTER ============ */
-.tiers{margin-top:42px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
-.tier-card{padding:22px 22px;border:1px solid var(--charcoal);background:var(--paper)}
-.tier-card .tnum{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:6px}
-.tier-card h4{font-size:17px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:12px;letter-spacing:-.005em}
-.tier-card ul{list-style:none;margin:0;padding:0}
-.tier-card li{position:relative;padding-left:18px;margin-bottom:7px;font-size:11px;line-height:1.45;color:var(--charcoal)}
-.tier-card li::before{content:'';position:absolute;left:0;top:.65em;width:10px;height:1px;background:var(--olive)}
-.tier-card li strong{color:var(--olive);font-weight:700}
+/* ============ TIERS ============ */
+.tiers{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+.tier-card{padding:22px 22px;border:1px solid var(--charcoal);background:var(--paper);position:relative}
 .tier-card.t1{border-left:5px solid var(--chartreuse)}
 .tier-card.t2{border-left:5px solid var(--olive)}
 .tier-card.t3{border-left:5px dashed var(--olive)}
-
-/* ============ RISKS ============ */
-.risks{margin-top:42px}
-.risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
-.risk{padding:18px 20px;border:1px solid var(--charcoal);border-left:4px solid var(--chartreuse);background:var(--white);display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:start}
-.risk .rn{font-size:22px;font-weight:700;color:var(--olive);line-height:1}
-.risk .rt{font-size:12px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:6px}
-.risk .rb{font-size:10.5px;line-height:1.5;color:var(--charcoal)}
-.risk .rb strong{color:var(--olive)}
+.tier-card .tnum{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:6px}
+.tier-card h4{font-size:17px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:4px;letter-spacing:-.005em}
+.tier-card .price{font-size:13px;font-weight:600;color:var(--olive);margin-bottom:14px;font-style:italic}
+.tier-card ul{list-style:none;margin:0;padding:0}
+.tier-card li{position:relative;padding-left:18px;margin-bottom:6px;font-size:11px;line-height:1.45;color:var(--charcoal)}
+.tier-card li::before{content:'';position:absolute;left:0;top:.65em;width:10px;height:1px;background:var(--olive)}
+.tier-card li strong{color:var(--olive);font-weight:700}
 
 /* ============ FOOTER ============ */
 .foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--charcoal);display:flex;justify-content:space-between;align-items:baseline}
@@ -172,463 +126,259 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
 
 @media print{
   html,body{background:#fff!important;padding:0!important;margin:0!important}
-  .sheet{box-shadow:none;width:100%;padding:24mm}
-  @page{size:A3 landscape;margin:0}
+  .sheet{box-shadow:none;width:100%;padding:18mm}
+  @page{size:A3 portrait;margin:0}
 }
 </style>
 </head>
 <body>
 
-<section class="sheet" data-screen-label="01 Journey Map">
+<section class="sheet">
 
   <!-- HEADER -->
   <div class="head">
     <div class="rule-top"></div>
-    <div class="eyebrow">DSC Alliance · Behavioural Map</div>
-    <h1>The user journey map. <em>Three layers, six compound behaviours.</em></h1>
-    <p class="sub">How a contact moves from form fill to active member — and the five compound behaviours that send them off the straight path. Built on the three-layer segmentation engine: capture, existing-email harvest, marketing-email harvest.</p>
+    <div class="eyebrow">DSC Alliance · Journey Map · v4 Simplified</div>
+    <h1>Three journeys. <em>Eleven qualifiers.</em> One destination.</h1>
+    <p class="sub">How a contact becomes a Founding member, what we send them in their free year, and the rules that move them between segments. Built for clarity over cleverness.</p>
     <div class="meta">
-      <strong>Field Map 03</strong><br />May 2026<br />For Anne, Diana &amp; Cristian<br />v3 · Layer 3 added
+      <strong>Field Map 04</strong><br />May 2026<br />For Anne, Diana &amp; Cristian<br />v4 · Simplified
     </div>
   </div>
 
-  <!-- LEGEND -->
-  <div class="legend">
-    <div class="legend-item"><span class="swatch s-layer"></span><span class="legend-label">Capture / entry point</span></div>
-    <div class="legend-item"><span class="swatch s-journey"></span><span class="legend-label">Journey (A · B · C · D)</span></div>
-    <div class="legend-item"><span class="swatch s-state"></span><span class="legend-label">Member state</span></div>
-    <div class="legend-item"><span class="swatch s-compound"></span><span class="legend-label">Compound segment</span></div>
-    <div class="legend-item"><span class="swatch s-action"></span><span class="legend-label">Action / new email</span></div>
-    <div class="legend-item" style="margin-left:auto"><span style="font-size:10px;font-style:italic;color:var(--olive)">→ standard path · ⤴ branch off to compound treatment</span></div>
-  </div>
-
-  <!-- ============ MAP ============ -->
-  <div class="map">
-
-    <!-- WIRES -->
-    <svg class="wires" viewBox="0 0 1136 1640" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M0,0 L10,5 L0,10 Z" fill="#2D2D2D" />
-        </marker>
-        <marker id="arrChartreuse" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M0,0 L10,5 L0,10 Z" fill="#DADD01" stroke="#2D2D2D" stroke-width="0.5" />
-        </marker>
-        <marker id="arrOlive" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-          <path d="M0,0 L10,5 L0,10 Z" fill="#757537" />
-        </marker>
-      </defs>
-
-      <!-- Entry → Journeys (horizontal flow Layer 1 → Layer 2/3) -->
-      <!-- Form fills (left col x≈140) all feed routing point -->
-      <path d="M260 220 L320 220 L320 360 L380 360" stroke="#2D2D2D" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
-      <path d="M260 320 L380 320" stroke="#2D2D2D" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
-      <path d="M260 420 L320 420 L320 380 L380 380" stroke="#2D2D2D" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
-      <path d="M260 520 L320 520 L320 500 L380 500" stroke="#2D2D2D" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
-      <path d="M260 620 L380 620" stroke="#2D2D2D" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
-      <path d="M260 720 L320 720 L320 640 L380 640" stroke="#2D2D2D" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
-
-      <!-- Journeys → Standard outcomes (right side) -->
-      <path d="M650 340 L740 340 L740 230 L820 230" stroke="#2D2D2D" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
-      <path d="M650 360 L760 360 L760 330 L820 330" stroke="#2D2D2D" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
-      <path d="M650 500 L760 500 L760 460 L820 460" stroke="#2D2D2D" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
-      <path d="M650 520 L760 520 L760 570 L820 570" stroke="#2D2D2D" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
-      <path d="M650 640 L740 640 L740 700 L820 700" stroke="#2D2D2D" stroke-width="1.5" fill="none" marker-end="url(#arr)" />
-
-      <!-- Journey → Compound branches (curved, chartreuse) -->
-      <!-- Journey A → Compound 4 fence-sitter -->
-      <path d="M530 410 C 530 470, 350 920, 280 970" stroke="#DADD01" stroke-width="2.2" fill="none" marker-end="url(#arrChartreuse)" />
-      <!-- Journey B → Compound 1 multi-guide -->
-      <path d="M530 530 C 540 700, 470 920, 520 970" stroke="#DADD01" stroke-width="2.2" fill="none" marker-end="url(#arrChartreuse)" />
-      <!-- Journey B → Compound 5 research-then-convert -->
-      <path d="M580 540 C 700 700, 720 920, 760 970" stroke="#DADD01" stroke-width="2.2" fill="none" marker-end="url(#arrChartreuse)" />
-      <!-- Journey C → Compound 2 busy async -->
-      <path d="M610 670 C 720 800, 880 940, 1000 970" stroke="#DADD01" stroke-width="2.2" fill="none" marker-end="url(#arrChartreuse)" />
-      <!-- Journey C → Compound 3 eternal browser -->
-      <path d="M580 660 C 600 820, 840 920, 1000 1090" stroke="#DADD01" stroke-width="2.2" fill="none" marker-end="url(#arrChartreuse)" />
-
-      <!-- State → Compound 6 founding ghost -->
-      <path d="M920 270 C 1080 380, 1100 940, 1000 1210" stroke="#DADD01" stroke-width="2.2" fill="none" marker-end="url(#arrChartreuse)" />
-
-      <!-- Compound → New email actions (olive) -->
-      <path d="M280 1080 L280 1180 L360 1180" stroke="#757537" stroke-width="2" fill="none" marker-end="url(#arrOlive)" />
-      <path d="M520 1080 L520 1180 L600 1180" stroke="#757537" stroke-width="2" fill="none" marker-end="url(#arrOlive)" />
-      <path d="M1000 1080 L1000 1180 L920 1180" stroke="#757537" stroke-width="2" fill="none" marker-end="url(#arrOlive)" />
-
-      <!-- Junction dot at routing -->
-      <circle cx="380" cy="430" r="5" fill="#DADD01" stroke="#2D2D2D" stroke-width="1.5" />
-    </svg>
-
-    <!-- LAYER RAILS -->
-    <div class="layer-rail" style="left:0;width:240px">
-      <div class="lnum">Layer 01</div>
-      <div class="ltitle">Capture</div>
-      <div class="lsub">Form fills · 10 entry points · 100s/qtr</div>
-    </div>
-    <div class="layer-rail" style="left:380px;width:270px">
-      <div class="lnum">Layer 02</div>
-      <div class="ltitle">Journey routing</div>
-      <div class="lsub">A · B · C · D · founding · 1000s of events</div>
-    </div>
-    <div class="layer-rail" style="left:820px;width:280px">
-      <div class="lnum">Layer 03</div>
-      <div class="ltitle">Behavioural harvest</div>
-      <div class="lsub">Reactions to 23 marketing emails · 10,000s of events</div>
-    </div>
-
-    <!-- ============ LAYER 1 — ENTRY POINTS ============ -->
-    <div class="node entry" style="top:200px;left:20px">
-      <div class="tag">Entry · house-warm</div>
-      <div class="title">800-list Sort</div>
-      <div class="desc">2-touch reactivation. <strong>Clicks → Journey A.</strong> Replies → manual Diana triage.</div>
-    </div>
-    <div class="node entry" style="top:300px;left:20px">
-      <div class="tag">Entry · paid social</div>
-      <div class="title">YouTube / Meta lead</div>
-      <div class="desc">Fastest-cooling cohort. Drops straight into <strong>Journey A urgency cadence.</strong></div>
-    </div>
-    <div class="node entry" style="top:400px;left:20px">
-      <div class="tag">Entry · organic</div>
-      <div class="title">Guide download</div>
-      <div class="desc">Free PDF gated by email. <strong>Single download → Journey B nurture.</strong></div>
-    </div>
-    <div class="node entry" style="top:500px;left:20px">
-      <div class="tag">Entry · live</div>
-      <div class="title">Webinar registration</div>
-      <div class="desc">Diana flagship signup. <strong>Triggers Journey C</strong> regardless of attendance.</div>
-    </div>
-    <div class="node entry" style="top:600px;left:20px">
-      <div class="tag">Entry · async</div>
-      <div class="title">Recording-request form</div>
-      <div class="desc">Separate gated form (Wk 4 website task). Captures <strong>active seeker</strong> distinctly.</div>
-    </div>
-    <div class="node entry" style="top:700px;left:20px">
-      <div class="tag">Entry · referral</div>
-      <div class="title">Member-referred form</div>
-      <div class="desc">Pre-qualified by an existing member. Skips Journey B, opens with personal email.</div>
-    </div>
-
-    <!-- ============ LAYER 2 — JOURNEYS ============ -->
-    <div class="node journey" style="top:200px;left:380px">
-      <div class="tag">Journey A · 4 emails · 10 days</div>
-      <div class="title">Fast-Lane (urgency)</div>
-      <div class="desc">Days 0 · 3 · 6 · 10. House-warm + paid social. <strong>Closes on Day 10 Founding deadline.</strong></div>
-    </div>
-    <div class="node journey" style="top:340px;left:380px">
-      <div class="tag">Journey B · 5 emails · 14 days</div>
-      <div class="title">Lead-Magnet Nurture</div>
-      <div class="desc">Days 0 · 3 · 7 · 11 · 14. Guide-anchored. Converts to A on Founding click.</div>
-    </div>
-    <div class="node journey" style="top:480px;left:380px">
-      <div class="tag">Journey C · 5 emails · pre + post webinar</div>
-      <div class="title">Webinar attendee</div>
-      <div class="desc">Reminder · live · post. Two endings: attended vs no-show — and four compound branches.</div>
-    </div>
-    <div class="node journey" style="top:620px;left:380px">
-      <div class="tag">Journey D · low-engagement</div>
-      <div class="title">Quiet hold + Re-engage 90d</div>
-      <div class="desc">No active sends. <strong>Re-engage email at Day 90.</strong> Click → resurrect. No open → suppress.</div>
-    </div>
-
-    <!-- ============ LAYER 3 — STANDARD OUTCOMES (states) ============ -->
-    <div class="node state" style="top:200px;left:820px">
-      <div class="tag">State</div>
-      <div class="title">Applicant → Active Founding</div>
-      <div class="desc">$87 charge on Day 366. Photo asks · listening email · webinars.</div>
-    </div>
-    <div class="node state" style="top:320px;left:820px">
-      <div class="tag">State</div>
-      <div class="title">Cart abandoner</div>
-      <div class="desc">Started application, did not submit. Highest-leverage retarget audience.</div>
-    </div>
-    <div class="node state" style="top:440px;left:820px">
-      <div class="tag">State</div>
-      <div class="title">Webinar engaged attendee</div>
-      <div class="desc">Stayed &gt;75% live. Score +15. Standard #15 follow-up.</div>
-    </div>
-    <div class="node state" style="top:560px;left:820px">
-      <div class="tag">State</div>
-      <div class="title">Webinar ghost</div>
-      <div class="desc">Registered, no-show, ignored recording offer. Demote to D after 14d.</div>
-    </div>
-    <div class="node state" style="top:680px;left:820px">
-      <div class="tag">State</div>
-      <div class="title">Suppressed / re-engaged</div>
-      <div class="desc">D outcome. Click "keep me on the list" → resurrect. No open → permanent suppress.</div>
-    </div>
-
-    <!-- ============ COMPOUND BAND ============ -->
-    <div style="position:absolute;top:870px;left:0;right:0;padding:0 20px;z-index:2">
-      <div class="section-head">The compound behaviours — where the straight path breaks</div>
-      <div class="section-rule"></div>
-    </div>
-
-    <div class="node compound" style="top:970px;left:20px">
-      <div class="tag">Compound 04 · Journey A</div>
-      <div class="title">Fence-sitter (engaged · no apply)</div>
-      <div class="desc">Opened all 4 A emails, clicked ≥2 links, did not apply by Day 14. <strong>Listening, but blocked.</strong></div>
-    </div>
-
-    <div class="node compound" style="top:970px;left:300px">
-      <div class="tag">Compound 01 · Journey B</div>
-      <div class="title">Multi-guide researcher</div>
-      <div class="desc">Downloaded 2+ guides in 30d, no application. <strong>Highest LTV per nurture cycle.</strong></div>
-    </div>
-
-    <div class="node compound" style="top:970px;left:560px">
-      <div class="tag">Compound 05 · Journey B → A</div>
-      <div class="title">Research-then-convert</div>
-      <div class="desc">Downloaded a guide AND applied within 14d. <strong>Perfect testimonial source.</strong> Day 14 photo ask gets the question.</div>
-    </div>
-
-    <div class="node compound" style="top:970px;left:870px">
-      <div class="tag">Compound 02 · Journey C</div>
-      <div class="title">Busy async-engaged</div>
-      <div class="desc">Registered, no-show, but engaged with recording (clicked #16 link OR filled form). <strong>Busiest doctors. Don't treat low-intent.</strong></div>
-    </div>
-
-    <div class="node compound" style="top:1090px;left:870px">
-      <div class="tag">Compound 03 · Journey C</div>
-      <div class="title">Eternal browser</div>
-      <div class="desc">3+ webinar regs, ≥1 attendance, never applied. <strong>Manual Diana DM.</strong></div>
-    </div>
-
-    <div class="node compound" style="top:1210px;left:870px">
-      <div class="tag">Compound 06 · Founding state</div>
-      <div class="title">Founding ghost</div>
-      <div class="desc">Active member, score 0, no opens 30d+. <strong>Will churn Day 366.</strong> Manual escalation Day 30, Day 45.</div>
-    </div>
-
-    <!-- ============ NEW EMAIL ACTIONS ============ -->
-    <div class="node action" style="top:1140px;left:140px">
-      <div class="tag">Flow H · Wk 6</div>
-      <div class="title">Anne-signed quick question</div>
-      <div class="desc">Plain text. Single question, reply-only. <strong>Replaces Journey A → D demotion.</strong></div>
-      <span class="pill-new">+ New email</span>
-    </div>
-
-    <div class="node action" style="top:1140px;left:380px">
-      <div class="tag">Flow G · Wk 6</div>
-      <div class="title">Executive summary email</div>
-      <div class="desc">Consolidates through-line across 2+ guides. Soft offer, no deadline. <strong>Replaces B-Day 11 webinar invite.</strong></div>
-      <span class="pill-new">+ New email</span>
-    </div>
-
-    <div class="node action" style="top:1140px;left:660px">
-      <div class="tag">Modify Day 14</div>
-      <div class="title">Day 14 photo ask + Q</div>
-      <div class="desc">Add: "What guide did you read before joining, and what convinced you?" <strong>Conditional on flag.</strong></div>
-    </div>
-
-    <div class="node action" style="top:1140px;left:660px;top:1240px">
-      <div class="tag">Flow F · Wk 5</div>
-      <div class="title">Busy async-engaged email</div>
-      <div class="desc">Acknowledges recording engagement. Async content path · soft Founding · next flagship date. <strong>Replaces #16.</strong></div>
-      <span class="pill-new">+ New email</span>
-    </div>
-
-    <div class="node action" style="top:1340px;left:140px">
-      <div class="tag">Manual · Diana</div>
-      <div class="title">Diana 1:1 DM</div>
-      <div class="desc">LinkedIn or personal email. "What's blocking you?" <strong>Sales work, not marketing.</strong></div>
-    </div>
-
-    <div class="node action" style="top:1340px;left:380px">
-      <div class="tag">Manual · Anne</div>
-      <div class="title">Personal Anne email · Day 30/45</div>
-      <div class="desc">Extension of Flow C. Diana follow-up Day 45 if still no response. <strong>Pre-churn intervention.</strong></div>
-    </div>
-
-    <div class="node action" style="top:1340px;left:660px">
-      <div class="tag">Retargeting · pixel</div>
-      <div class="title">Parallel paid-social audience</div>
-      <div class="desc">Every Layer 3 tag fires a Meta / LinkedIn custom audience. <strong>6 new audiences.</strong> Activate when ad budget exists.</div>
-    </div>
-
-  </div>
-
-  <!-- ============ COMPOUND LEDGER ============ -->
-  <div class="ledger">
-    <div class="section-head">Part 2 · The compound behaviours, ledger view</div>
-    <div class="section-h2">Six patterns. Three new emails. <em style="color:var(--olive);font-style:italic">One rule: ten contacts before you build.</em></div>
-    <div class="section-rule"></div>
-    <p class="section-lead">Compound segments are higher signal than single-email reactions because they capture a pattern, not a moment. Each card below names the definition, what it means, and the treatment.</p>
-
-    <div class="ledger-grid">
-      <div class="ledger-card tier-1">
-        <div class="num">01</div>
-        <div class="name">Multi-guide researcher</div>
-        <p class="def"><strong>If:</strong> 2+ free guides downloaded within 30 days, no Founding application.</p>
-        <p class="means">Studying DSC seriously but blocked — fear, financial, organisational readiness. Higher intent than single-guide downloaders.</p>
-        <p class="treat"><strong>Treat:</strong> Send executive-summary email. Do NOT enrol in Journey A urgency. <strong>Flow G.</strong></p>
-        <div class="footer"><span>Tier 1 · build Wk 6</span><span class="build">+ 1 email</span></div>
-      </div>
-
-      <div class="ledger-card tier-1">
-        <div class="num">02</div>
-        <div class="name">Busy async-engaged</div>
-        <p class="def"><strong>If:</strong> Registered, no-show, engaged with recording (clicked #16 link OR filled separate recording form).</p>
-        <p class="means">Busiest doctors. Highest-LTV physicians. Wants content async — time-constrained, not low-intent.</p>
-        <p class="treat"><strong>Treat:</strong> Skip standard #16. Send async-path email with next flagship date. <strong>Flow F.</strong></p>
-        <div class="footer"><span>Tier 1 · build Wk 5</span><span class="build">+ 1 email</span></div>
-      </div>
-
-      <div class="ledger-card tier-1">
-        <div class="num">04</div>
-        <div class="name">Fence-sitter</div>
-        <p class="def"><strong>If:</strong> Opened all 4 Journey A emails, clicked ≥2 links, did not apply by Day 14.</p>
-        <p class="means">Listening. Knows everything we're saying. Something specific is stopping them — and we don't know what.</p>
-        <p class="treat"><strong>Treat:</strong> Single Anne-signed plain-text email. Reply-only, no CTA. <strong>Flow H.</strong></p>
-        <div class="footer"><span>Tier 1 · build Wk 6</span><span class="build">+ 1 email</span></div>
-      </div>
-
-      <div class="ledger-card">
-        <div class="num">03</div>
-        <div class="name">Eternal browser</div>
-        <p class="def"><strong>If:</strong> 3+ webinar regs in 60d, ≥1 attendance, never applied.</p>
-        <p class="means">Loves the content, won't commit. Real blocker (financial, regulatory) or competitor-observer. Needs human conversation.</p>
-        <p class="treat"><strong>Treat:</strong> Diana DM — NOT another automated send. Sales work, not marketing.</p>
-        <div class="footer"><span>Tier 2 · vol-gated</span><span class="build">no email</span></div>
-      </div>
-
-      <div class="ledger-card">
-        <div class="num">05</div>
-        <div class="name">Research-then-convert</div>
-        <p class="def"><strong>If:</strong> Downloaded a guide AND submitted Founding application within 14 days.</p>
-        <p class="means">Best-case journey. They did their homework, then committed. Perfect testimonial source.</p>
-        <p class="treat"><strong>Treat:</strong> Modify Day 14 photo ask (#17) to ask "what guide convinced you?" — conditional on flag.</p>
-        <div class="footer"><span>Tier 2 · vol-gated</span><span class="build">modify, not new</span></div>
-      </div>
-
-      <div class="ledger-card">
-        <div class="num">06</div>
-        <div class="name">Founding ghost</div>
-        <p class="def"><strong>If:</strong> Active member, score 0, no opens for 30+ days.</p>
-        <p class="means">Paying-eligible member who's already gone. Will churn at Day 366. Detect by Day 14 of Founding journey.</p>
-        <p class="treat"><strong>Treat:</strong> Anne personal email Day 30 → Diana personal email Day 45. Extends existing Flow C.</p>
-        <div class="footer"><span>Tier 1 · Wk 4</span><span class="build">extends Flow C</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ THE THREE NEW EMAILS ============ -->
-  <div class="emails">
-    <div class="ehead">
-      <h3>The three new emails this map requires.</h3>
-      <div class="e-eyebrow">Part 3 · Net additions to the 23-email plan</div>
-    </div>
-    <div class="emails-grid">
-      <div class="email-card">
-        <div class="ecode">Flow F · Wk 5</div>
-        <div class="ename">Busy async-engaged</div>
-        <div class="esubj">"You got the recording — here's what's next (for busy doctors)"</div>
-        <p class="ewho"><strong>Who:</strong> <code>+flag:no-show-engaged</code> OR <code>+flag:no-show-active-seeker</code></p>
-        <p class="ewho"><strong>Body:</strong> Acknowledge async engagement. Surface guide library + recorded webinar library. Soft Founding offer. Next flagship date. No urgency push.</p>
-        <div class="ewhen">Replaces standard #16</div>
-      </div>
-      <div class="email-card">
-        <div class="ecode">Flow G · Wk 6</div>
-        <div class="ename">Multi-guide executive summary</div>
-        <div class="esubj">"You've been reading — here's the executive summary"</div>
-        <p class="ewho"><strong>Who:</strong> <code>+flag:multi-guide-researcher</code> (triggered on 2nd guide download in 30d)</p>
-        <p class="ewho"><strong>Body:</strong> Consolidate through-line across guides. 1-page printable summary as thank-you. Mention Alliance template library. Soft Founding offer.</p>
-        <div class="ewhen">Replaces B-Day 11</div>
-      </div>
-      <div class="email-card">
-        <div class="ecode">Flow H · Wk 6</div>
-        <div class="ename">Anne-signed quick question</div>
-        <div class="esubj">"Quick question from Anne"</div>
-        <p class="ewho"><strong>Who:</strong> <code>+flag:fence-sitter-engaged</code></p>
-        <p class="ewho"><strong>Body:</strong> Plain text. "I noticed you've been following our emails. Is there something specific holding you back I can help with?" No CTAs. Reply-only.</p>
-        <div class="ewhen">Replaces A → D demote</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ PRIORITY TIERS ============ -->
-  <div class="ledger" style="margin-top:48px">
-    <div class="section-head">Part 5 · What to actually build</div>
-    <div class="section-h2">Don't build all the segments. <em style="color:var(--olive);font-style:italic">Pick by leverage.</em></div>
-    <div class="section-rule"></div>
-  </div>
-
-  <div class="tiers">
-    <div class="tier-card t1">
-      <div class="tnum">Tier 1 · Build Wk 4–8</div>
-      <h4>Measurable lift, volume justified.</h4>
-      <ul>
-        <li><strong>Multi-guide researcher</strong> — Flow G, Wk 6</li>
-        <li><strong>Busy async-engaged</strong> — Flow F, Wk 5</li>
-        <li><strong>Fence-sitter</strong> — Flow H, Wk 6</li>
-        <li><strong>Founding ghost</strong> — extends Flow C, Wk 4</li>
-        <li><strong>Webinar early-exit</strong> — uses #15 timestamp variant, Wk 5</li>
-      </ul>
-    </div>
-    <div class="tier-card t2">
-      <div class="tnum">Tier 2 · Volume-gated</div>
-      <h4>Build only if 10+ contacts hit segment in 60 days.</h4>
-      <ul>
-        <li><strong>Eternal browser</strong> — if 5+ regs by Wk 8</li>
-        <li><strong>Research-then-convert</strong> — if 3+ Founders downloaded a guide first</li>
-        <li><strong>Cart-abandoner retargeting</strong> — if 10+ abandon by Wk 8</li>
-      </ul>
-    </div>
-    <div class="tier-card t3">
-      <div class="tnum">Tier 3 · Phase 4</div>
-      <h4>Worth tracking. Not actioning in 90 days.</h4>
-      <ul>
-        <li>Cross-channel signal stacking</li>
-        <li>Multi-touch attribution scoring</li>
-        <li>Second-derivative engagement decay</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- ============ RISKS ============ -->
-  <div class="risks">
-    <div class="section-head">Part 6 · Critical pushback</div>
-    <div class="section-h2">Four real risks <em style="color:var(--olive);font-style:italic">worth challenging.</em></div>
+  <!-- ============ THE BIG PICTURE ============ -->
+  <div class="section" style="margin-top:8px">
+    <div class="section-eyebrow">The big picture</div>
+    <h2 class="section-h2">Capture → <em>Journey</em> → Founding</h2>
     <div class="section-rule"></div>
 
-    <div class="risk-grid">
-      <div class="risk">
-        <div class="rn">01</div>
-        <div>
-          <div class="rt">Compound segments need volume to mean anything.</div>
-          <div class="rb">If only 4 contacts hit "multi-guide researcher" in 90 days, Flow G is a waste. Subject-line A/B on Journey B would lift conversion more. <strong>Decision rule:</strong> no compound-segment flow ships until 10+ trigger contacts.</div>
-        </div>
+    <div class="bigpic">
+      <div class="bigpic-col">
+        <div class="bp-tag">1 · Capture</div>
+        <div class="bp-title">Where they come from</div>
+        <ul>
+          <li>YouTube → landing page</li>
+          <li>Monthly 30-min webinar</li>
+          <li>Quarterly Diana 1-hour webinar</li>
+          <li>Free weekly guide download</li>
+          <li>Newsletter sign-up</li>
+          <li>Existing 800-doctor list</li>
+          <li>Paid ad / partner referral</li>
+        </ul>
       </div>
-      <div class="risk">
-        <div class="rn">02</div>
-        <div>
-          <div class="rt">Cadence-stacking risk.</div>
-          <div class="rb">A contact in Journey A who downloads a guide while flagged multi-guide-researcher AND fence-sitter could see 4 + 5 + 1 + 1 emails in 14 days. <strong>WF-00 Flow Router must enforce mutual exclusivity</strong> across Layer 3 segments.</div>
-        </div>
+      <div class="bigpic-arrow">→</div>
+      <div class="bigpic-col">
+        <div class="bp-tag">2 · Journey</div>
+        <div class="bp-title">One of three</div>
+        <ul>
+          <li><strong>Fast Track</strong> · for hot leads</li>
+          <li><strong>Nurture Track</strong> · for warm leads who took an action</li>
+          <li><strong>Slow Cooker</strong> · ambient newsletter + guide</li>
+          <li>Qualifiers move them between tracks (see §3)</li>
+        </ul>
       </div>
-      <div class="risk">
-        <div class="rn">03</div>
-        <div>
-          <div class="rt">Active-seeker detection needs a separate form.</div>
-          <div class="rb">To detect Compound 2 (#6) cleanly, the recording must be gated behind a discrete form, not the email link. <strong>Wk 4 website task.</strong> Difference between detecting cleanly vs. relying on link-click noise.</div>
-        </div>
-      </div>
-      <div class="risk">
-        <div class="rn">04</div>
-        <div>
-          <div class="rt">Retargeting doubles ad spend.</div>
-          <div class="rb">Six new audiences = six creatives, six audience sizes, parallel paid-social budget. <strong>Build audiences in 90-day window</strong> (pixel rules cost nothing). Activate ads only when budget exists.</div>
-        </div>
+      <div class="bigpic-arrow">→</div>
+      <div class="bigpic-col dest">
+        <div class="bp-tag">3 · Destination</div>
+        <div class="bp-title">Founding · Free 12 months</div>
+        <ul>
+          <li>Card on file at signup</li>
+          <li>Auto-converts to <strong>$87/mo Alliance</strong> at month 13</li>
+          <li>Offer closes <strong>Jul 31, 2026</strong></li>
+        </ul>
       </div>
     </div>
   </div>
 
-  <!-- FOOTER -->
+  <!-- ============ THREE JOURNEYS ============ -->
+  <div class="section">
+    <div class="section-eyebrow">The three journeys</div>
+    <h2 class="section-h2">Every contact lands in <em>exactly one</em></h2>
+    <div class="section-rule"></div>
+
+    <div class="journeys">
+
+      <!-- JOURNEY 1 -->
+      <div class="j-card j1">
+        <div class="j-head">
+          <div class="j-num">Journey 1 · Fast Track</div>
+          <div class="j-name">Hot lead → Founding</div>
+          <span class="j-tag">flow:fast-track</span>
+        </div>
+        <div class="j-body">
+          <div class="j-who"><strong>Who enters:</strong> YouTube LP signups, Diana flagship webinar registrants, paid-ad form fills, house-warm 800-list contacts who clicked the offer.</div>
+          <div class="j-steps-label">4 emails over 10 days</div>
+          <div class="j-steps">
+            <div class="j-step"><div class="d">Day 0</div><div class="t">Welcome + free 12-month offer (one email)</div></div>
+            <div class="j-step"><div class="d">Day 3</div><div class="t">60-second member testimonial video</div></div>
+            <div class="j-step"><div class="d">Day 6</div><div class="t">Itemised value: 12 months, 88+ touches</div></div>
+            <div class="j-step"><div class="d">Day 10</div><div class="t">Final urgency: countdown to Jul 31</div></div>
+          </div>
+          <div class="j-exits"><strong>Exits</strong>Application submitted → Founding Lifecycle. No application by Day 14 → demote to Slow Cooker.</div>
+        </div>
+      </div>
+
+      <!-- JOURNEY 2 -->
+      <div class="j-card j2">
+        <div class="j-head">
+          <div class="j-num">Journey 2 · Nurture Track</div>
+          <div class="j-name">Engaged lead → Founding</div>
+          <span class="j-tag">flow:nurture-track</span>
+        </div>
+        <div class="j-body">
+          <div class="j-who"><strong>Who enters:</strong> Anyone who downloaded a guide, registered for a monthly webinar, or clicked a Slow Cooker newsletter link. They've shown intent — not yet ready to commit.</div>
+          <div class="j-steps-label">5 emails over 14 days</div>
+          <div class="j-steps">
+            <div class="j-step"><div class="d">Day 0</div><div class="t">Deliver value (the guide, the webinar reminder, the link they clicked)</div></div>
+            <div class="j-step"><div class="d">Day 3</div><div class="t">Member case story: "Dr Lee did this last year"</div></div>
+            <div class="j-step"><div class="d">Day 7</div><div class="t">First Founding offer (now they've consumed value)</div></div>
+            <div class="j-step"><div class="d">Day 11</div><div class="t">Cross-channel: invite to next webinar OR next guide</div></div>
+            <div class="j-step"><div class="d">Day 14</div><div class="t">Last call before demotion</div></div>
+          </div>
+          <div class="j-exits"><strong>Exits</strong>Application submitted → Founding Lifecycle. No application by Day 14 → demote to Slow Cooker.</div>
+        </div>
+      </div>
+
+      <!-- JOURNEY 3 -->
+      <div class="j-card j3">
+        <div class="j-head">
+          <div class="j-num">Journey 3 · Slow Cooker</div>
+          <div class="j-name">Newsletter only · ambient</div>
+          <span class="j-tag">flow:slow-cook</span>
+        </div>
+        <div class="j-body">
+          <div class="j-who"><strong>Who enters:</strong> Newsletter form sign-ups (no other action), demotions from Journeys 1 and 2, cold half of the 800 list, anyone in "wait and see" mode.</div>
+          <div class="j-steps-label">No drip · broadcast cadence only</div>
+          <div class="j-steps">
+            <div class="j-step"><div class="d">Tue</div><div class="t">Weekly newsletter (52/yr) — industry news + Diana POV</div></div>
+            <div class="j-step"><div class="d">Fri</div><div class="t">Weekly free guide (52/yr) — practical PDF</div></div>
+            <div class="j-step"><div class="d">Mon</div><div class="t">Monthly: webinar invite (12/yr)</div></div>
+            <div class="j-step"><div class="d">Q</div><div class="t">Quarterly: Diana flagship invite (4/yr)</div></div>
+            <div class="j-step"><div class="d">M</div><div class="t">Monthly: Founding offer reminder (only direct ask)</div></div>
+          </div>
+          <div class="j-exits"><strong>Exits</strong>Engagement score climbs to 30+ OR clicks Founding offer → promote to Fast Track. 90 days no opens → suppressed.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============ QUALIFIERS TABLE ============ -->
+  <div class="section">
+    <div class="section-eyebrow">The qualifiers</div>
+    <h2 class="section-h2">Eleven rules that move people <em>between segments</em></h2>
+    <div class="section-rule"></div>
+    <p class="section-lead">Each rule fires automatically in GHL when its condition is met. No manual sorting. The system enforces "one journey at a time" — a contact is never in two flows simultaneously.</p>
+
+    <div class="qual">
+      <div class="qual-row head">
+        <div>#</div><div>If this happens</div><div></div><div>Then move them to</div>
+      </div>
+      <div class="qual-row"><div class="qn">Q1</div><div class="qif">Submits Founding application (with card on file)</div><div class="qarr">→</div><div class="qthen"><strong>Applicant</strong> · then <strong>Founding Lifecycle</strong> after admin approval</div></div>
+      <div class="qual-row"><div class="qn">Q2</div><div class="qif">Clicks any Founding offer link in any email</div><div class="qarr">→</div><div class="qthen">Promote to <strong>Fast Track</strong> (Journey 1) immediately</div></div>
+      <div class="qual-row"><div class="qn">Q3</div><div class="qif">Downloads a free guide</div><div class="qarr">→</div><div class="qthen">Enter <strong>Nurture Track</strong> (Journey 2) — overrides Slow Cooker</div></div>
+      <div class="qual-row"><div class="qn">Q4</div><div class="qif">Registers for any webinar</div><div class="qarr">→</div><div class="qthen">Enter <strong>Nurture Track</strong> (additive — keeps prior tag)</div></div>
+      <div class="qual-row"><div class="qn">Q5</div><div class="qif">Engagement score crosses 30</div><div class="qarr">→</div><div class="qthen">Tag <strong>intent:hot</strong> · queued for Diana personal DM</div></div>
+      <div class="qual-row"><div class="qn">Q6</div><div class="qif">Engagement score crosses 60</div><div class="qarr">→</div><div class="qthen">Tag <strong>intent:advocate</strong> · queued for spotlight + referral ask</div></div>
+      <div class="qual-row"><div class="qn">Q7</div><div class="qif">14 days in Fast Track or Nurture Track with no application</div><div class="qarr">→</div><div class="qthen">Demote to <strong>Slow Cooker</strong></div></div>
+      <div class="qual-row"><div class="qn">Q8</div><div class="qif">90 days zero opens (any segment)</div><div class="qarr">→</div><div class="qthen"><strong>Suppressed</strong> · removed from all sends</div></div>
+      <div class="qual-row"><div class="qn">Q9</div><div class="qif">Admin approves Founding application</div><div class="qarr">→</div><div class="qthen"><strong>Founding Lifecycle</strong> (Days 1–334)</div></div>
+      <div class="qual-row"><div class="qn">Q10</div><div class="qif">Day 335 of Founding (30 days before auto-charge)</div><div class="qarr">→</div><div class="qthen"><strong>Conversion Sequence</strong> (Days 335–365)</div></div>
+      <div class="qual-row"><div class="qn">Q11</div><div class="qif">Stripe charges $87 successfully on Day 366</div><div class="qarr">→</div><div class="qthen"><strong>Alliance Member</strong> · paying, $87/mo locked for life</div></div>
+    </div>
+  </div>
+
+  <!-- ============ DELIVERABLES ============ -->
+  <div class="section">
+    <div class="section-eyebrow">What every Founding member gets</div>
+    <h2 class="section-h2">Twelve free months · <em>120 content touches</em></h2>
+    <div class="section-rule"></div>
+    <p class="section-lead">Updated cadence: weekly newsletter, weekly guide, monthly webinar, quarterly Diana flagship. Plus the always-on community, directory listing, and personal asks.</p>
+
+    <div class="delivery">
+      <div class="del-card">
+        <div class="dnum">52</div>
+        <div class="dname">Weekly newsletters</div>
+        <div class="dwhen">Tuesdays · 10am ET</div>
+      </div>
+      <div class="del-card">
+        <div class="dnum">52</div>
+        <div class="dname">Weekly free guides</div>
+        <div class="dwhen">Fridays · practical PDFs</div>
+      </div>
+      <div class="del-card">
+        <div class="dnum">12</div>
+        <div class="dname">Monthly 30-min webinars</div>
+        <div class="dwhen">Mid-month · live + recording</div>
+      </div>
+      <div class="del-card">
+        <div class="dnum">4</div>
+        <div class="dname">Quarterly Diana flagships</div>
+        <div class="dwhen">1 hour · the conversion event</div>
+      </div>
+    </div>
+
+    <div class="delivery-total">
+      <div class="dt-label">Total content touches per Founding year</div>
+      <div class="dt-num">120</div>
+      <div class="dt-sub">+ always-on directory listing, FB Group, photo features, member spotlight</div>
+    </div>
+  </div>
+
+  <!-- ============ TIERS ============ -->
+  <div class="section">
+    <div class="section-eyebrow">Tier offers</div>
+    <h2 class="section-h2">Three tiers · <em>one upgrade path</em></h2>
+    <div class="section-rule"></div>
+
+    <div class="tiers">
+      <div class="tier-card t1">
+        <div class="tnum">Tier 1 · The hook</div>
+        <h4>Founding Member</h4>
+        <div class="price">FREE for 12 months · register by Jul 31</div>
+        <ul>
+          <li>National DSC <strong>directory listing</strong></li>
+          <li>52 newsletters + 52 guides</li>
+          <li>12 monthly + 4 quarterly webinars</li>
+          <li>Private FB Group access</li>
+          <li>Member spotlight opportunity</li>
+          <li>Refer-a-colleague program</li>
+          <li>Auto-converts to <strong>$87/mo Alliance</strong> at month 13 (locked for life)</li>
+        </ul>
+      </div>
+      <div class="tier-card t2">
+        <div class="tnum">Tier 2 · The lifer</div>
+        <h4>Alliance Member</h4>
+        <div class="price">$87 grandfathered · $97 standard · monthly</div>
+        <ul>
+          <li>Everything in Founding</li>
+          <li><strong>DSC Practice Launch Course</strong></li>
+          <li><strong>Full template library</strong> — legal, financial, scripts</li>
+          <li>Live webinar Q&A access</li>
+          <li>Paid webinar recordings</li>
+          <li>Priority directory placement</li>
+        </ul>
+      </div>
+      <div class="tier-card t3">
+        <div class="tnum">Tier 3 · The cohort</div>
+        <h4>DSC Accelerator</h4>
+        <div class="price">$597/month · 12-month cohort · cap of 30</div>
+        <ul>
+          <li>Everything in Alliance</li>
+          <li><strong>Quarterly Mastermind</strong> with expert faculty</li>
+          <li><strong>Monthly group Q&A</strong> with Diana</li>
+          <li>Cohort Slack with peers</li>
+          <li>1:1 onboarding call</li>
+          <li>Annual flagship event</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
   <div class="foot">
-    <div>
-      <div class="wm">Brave New Media · DSC Alliance · Layer 3 Map</div>
-      <div class="copy" style="margin-top:4px">23 (core plan) + 3 (Layer 3) + 6 (Layer 1) + 2 (Layer 2 variants) = 34 pieces of copy over 90 days.</div>
-    </div>
-    <div class="copy" style="text-align:right">© 2026 Brave New Media<br />Where operational excellence becomes market authority.</div>
+    <div class="wm">DSC Alliance · Brave New Media</div>
+    <div class="copy">Field Map 04 · v4 Simplified · 2026-05-15<br />Three journeys · eleven qualifiers · 120 content touches per Founding year</div>
   </div>
 
 </section>
