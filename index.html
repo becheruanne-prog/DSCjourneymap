@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>DSC Alliance — Acquisition Scheme v6 · Brave New Media</title>
+<title>DSC Alliance — Simplified Founding Journey v7 · Brave New Media</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
@@ -17,6 +17,7 @@
   --soft:#F0F0E3;
   --line:rgba(45,45,45,.15);
   --warn:#B8860B;
+  --kill:#a02020;
 }
 html,body{background:#e5e5e5;font-family:'Inter',sans-serif;color:var(--charcoal);-webkit-font-smoothing:antialiased}
 body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap:24px}
@@ -29,7 +30,7 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
   padding:56px 64px 64px;
 }
 
-/* ============ DRAFT BANNER ============ */
+/* ============ V7 BANNER ============ */
 .draft-banner{
   position:absolute;top:0;left:0;right:0;
   background:var(--charcoal);color:var(--chartreuse);
@@ -42,148 +43,125 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
 .head{position:relative;margin:24px 0 30px}
 .head .rule-top{width:48px;height:2px;background:var(--chartreuse);margin-bottom:16px}
 .head .eyebrow{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:12px}
-.head h1{font-size:40px;font-weight:700;line-height:1.05;letter-spacing:-.02em;color:var(--charcoal);margin-bottom:12px;text-wrap:balance;max-width:26ch}
+.head h1{font-size:40px;font-weight:700;line-height:1.05;letter-spacing:-.02em;color:var(--charcoal);margin-bottom:12px;text-wrap:balance;max-width:24ch}
 .head h1 em{font-style:italic;color:var(--olive)}
 .head .sub{font-size:15px;font-style:italic;color:var(--olive);max-width:80ch;line-height:1.5}
 .head .meta{position:absolute;right:0;top:0;text-align:right;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--olive);line-height:2;font-weight:600}
 .head .meta strong{color:var(--charcoal)}
 
-/* ============ THE CONSTRAINT (TOP OF DOC) ============ */
-.constraint{
-  margin:24px 0;padding:20px 26px;
-  background:var(--charcoal);color:var(--white);
-  border-left:5px solid var(--chartreuse);
-  display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;
+/* ============ THE NUMBER LINE ============ */
+.numbers{
+  margin:24px 0 36px;
+  display:grid;grid-template-columns:repeat(5,1fr);gap:0;
+  border:1px solid var(--charcoal);
 }
-.constraint .c-num{font-size:48px;font-weight:700;color:var(--chartreuse);line-height:1;letter-spacing:-.04em}
-.constraint .c-num small{font-size:14px;color:var(--white);font-weight:600;letter-spacing:.06em;margin-left:6px}
-.constraint .c-body{font-size:13px;line-height:1.5;color:var(--white)}
-.constraint .c-body strong{color:var(--chartreuse);font-weight:700}
-.constraint .c-tag{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--chartreuse);margin-bottom:6px}
+.num-cell{padding:18px 16px;text-align:center;border-right:1px solid var(--line)}
+.num-cell:last-child{border-right:none}
+.num-cell.dest{background:var(--chartreuse)}
+.num-cell .nbig{font-size:36px;font-weight:700;color:var(--charcoal);line-height:1;letter-spacing:-.03em}
+.num-cell.dest .nbig{color:var(--charcoal)}
+.num-cell .nlabel{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--olive);margin-top:6px;line-height:1.3}
 
-/* ============ IDENTITY ANCHOR ============ */
-.identity{
-  margin:24px 0;
-  padding:22px 26px;
-  background:var(--olive);color:var(--white);
-  border-left:5px solid var(--chartreuse);
+/* ============ FIXES CALLOUT ============ */
+.fixes{
+  margin:24px 0;padding:20px 24px;
+  background:var(--paper);border:1px solid var(--charcoal);border-left:5px solid var(--warn);
 }
-.identity .id-tag{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--chartreuse);margin-bottom:8px}
-.identity .id-quote{font-size:20px;font-weight:600;line-height:1.3;letter-spacing:-.005em;font-style:italic}
-.identity .id-quote::before{content:"\201C";font-size:32px;color:var(--chartreuse);margin-right:4px;line-height:1;vertical-align:-4px}
-.identity .id-quote::after{content:"\201D";font-size:32px;color:var(--chartreuse);margin-left:4px;line-height:1;vertical-align:-4px}
-
-/* ============ SKILLS APPLIED CHIPS ============ */
-.skills-strip{
-  display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 36px;
-  padding:14px 18px;background:var(--paper);border-left:3px solid var(--chartreuse);
-  align-items:center;
-}
-.skills-strip .ss-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);margin-right:6px}
-.skills-strip .chip{
-  font-size:10px;font-weight:600;color:var(--charcoal);background:var(--white);
-  padding:4px 10px;border:1px solid var(--charcoal);letter-spacing:.02em;
-  font-family:monospace;
-}
+.fixes .fx-tag{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--warn);margin-bottom:8px}
+.fixes .fx-title{font-size:14px;font-weight:700;color:var(--charcoal);margin-bottom:12px;line-height:1.3}
+.fixes table{width:100%;border-collapse:collapse;font-size:11px}
+.fixes th{text-align:left;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--olive);padding:6px 10px 6px 0;border-bottom:1px solid var(--line)}
+.fixes td{padding:8px 10px 8px 0;vertical-align:top;line-height:1.4;border-bottom:1px solid var(--line)}
+.fixes td:first-child{font-family:monospace;font-weight:700;color:var(--warn);width:50px}
+.fixes tr:last-child td{border-bottom:none}
 
 /* ============ SECTION HEADERS ============ */
-.section{margin-top:56px}
+.section{margin-top:48px}
 .section-eyebrow{font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:8px}
-.section-h2{font-size:26px;font-weight:700;color:var(--charcoal);letter-spacing:-.015em;line-height:1.1;margin-bottom:6px}
+.section-h2{font-size:24px;font-weight:700;color:var(--charcoal);letter-spacing:-.015em;line-height:1.1;margin-bottom:6px}
 .section-h2 em{font-style:italic;color:var(--olive)}
 .section-rule{width:36px;height:2px;background:var(--chartreuse);margin:12px 0 22px}
 .section-lead{font-size:13px;font-style:italic;color:var(--olive);max-width:80ch;line-height:1.5;margin-bottom:24px}
 
-/* ============ TWO BUCKETS ============ */
-.buckets{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.bucket{border:1px solid var(--charcoal);background:var(--white);padding:24px 26px}
-.bucket.broadcast{border-left:5px solid var(--chartreuse);background:var(--paper)}
-.bucket.triggered{border-left:5px solid var(--olive)}
-.bucket .b-tag{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:6px}
-.bucket .b-title{font-size:18px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:6px;letter-spacing:-.005em}
-.bucket .b-cap{font-size:13px;font-weight:600;color:var(--olive);margin-bottom:14px;font-style:italic}
-.bucket .b-body{font-size:11.5px;line-height:1.55;color:var(--charcoal)}
-.bucket .b-body strong{color:var(--olive);font-weight:700}
-.bucket .b-list{margin-top:10px;padding-left:0;list-style:none}
-.bucket .b-list li{position:relative;padding-left:14px;margin-bottom:5px;font-size:11px;line-height:1.5}
-.bucket .b-list li::before{content:'';position:absolute;left:0;top:.65em;width:8px;height:1px;background:var(--olive)}
+/* ============ FUNNEL DIAGRAM ============ */
+.funnel{background:var(--paper);border:1px solid var(--charcoal);padding:30px 30px}
+.funnel-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+.funnel-row.one{grid-template-columns:1fr}
+.funnel-row.two{grid-template-columns:1fr 1fr}
+.funnel-entry{border:1px solid var(--charcoal);background:var(--white);padding:14px 16px;text-align:center;position:relative}
+.funnel-entry.fix{border-left:4px solid var(--warn)}
+.funnel-entry .fe-num{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--olive);margin-bottom:4px}
+.funnel-entry .fe-title{font-size:13px;font-weight:700;color:var(--charcoal);line-height:1.2}
+.funnel-entry .fe-sub{font-size:10px;color:var(--charcoal);margin-top:4px;font-style:italic;line-height:1.4}
+.funnel-arrow{text-align:center;font-size:24px;color:var(--olive);margin:8px 0;font-weight:300}
+.funnel-form{background:var(--charcoal);color:var(--white);padding:16px 20px;text-align:center;border-left:5px solid var(--chartreuse)}
+.funnel-form .ff-tag{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--chartreuse);margin-bottom:4px}
+.funnel-form .ff-title{font-size:16px;font-weight:700;line-height:1.2}
+.funnel-branch{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.funnel-leg{padding:14px 16px;border:1px solid var(--charcoal);text-align:center}
+.funnel-leg.yes{background:var(--chartreuse)}
+.funnel-leg.no{background:var(--white)}
+.funnel-leg .fl-tag{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:4px}
+.funnel-leg .fl-title{font-size:13px;font-weight:700;color:var(--charcoal);line-height:1.2}
+.funnel-leg .fl-sub{font-size:10px;color:var(--charcoal);margin-top:4px;line-height:1.4}
+.funnel-dest{margin-top:18px;background:var(--olive);color:var(--white);padding:16px 20px;text-align:center}
+.funnel-dest .fd-title{font-size:13px;font-weight:700;line-height:1.3}
+.funnel-dest .fd-sub{font-size:11px;font-style:italic;color:var(--chartreuse);margin-top:4px}
 
-/* ============ 4 NEWSLETTER SLOTS ============ */
-.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.slot{border:1px solid var(--charcoal);background:var(--white);padding:20px 20px;border-top:4px solid var(--chartreuse)}
-.slot .sl-num{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:4px}
-.slot .sl-title{font-size:15px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:10px}
-.slot .sl-title em{font-style:italic;color:var(--olive);font-weight:600;font-size:11px;display:block;margin-top:3px;letter-spacing:.04em;text-transform:uppercase}
-.slot ul{list-style:none;margin-top:10px}
-.slot li{font-size:10.5px;line-height:1.5;padding:3px 0;padding-left:12px;position:relative;color:var(--charcoal)}
-.slot li::before{content:'';position:absolute;left:0;top:.65em;width:6px;height:1px;background:var(--olive)}
-.slot li strong{color:var(--olive)}
+/* ============ MATRIX ============ */
+.matrix{display:grid;grid-template-columns:60px 1fr 1fr;gap:0;border:1px solid var(--charcoal)}
+.mx-cell{padding:18px 18px;border:1px solid var(--line);background:var(--white)}
+.mx-corner{background:var(--charcoal);color:var(--white);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:center;justify-content:center}
+.mx-col-head{background:var(--olive);color:var(--white);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;text-align:center;padding:12px 18px}
+.mx-row-head{background:var(--olive);color:var(--white);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;writing-mode:vertical-rl;text-orientation:mixed;text-align:center;padding:18px 12px}
+.mx-quad{padding:18px 20px}
+.mx-quad.do-first{background:var(--chartreuse)}
+.mx-quad.build{background:#fef9c3}
+.mx-quad.maybe{background:var(--paper)}
+.mx-quad.kill{background:#fef2f2}
+.mx-quad .mq-tag{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;margin-bottom:10px}
+.mx-quad.do-first .mq-tag{color:var(--charcoal)}
+.mx-quad.build .mq-tag{color:var(--warn)}
+.mx-quad.maybe .mq-tag{color:var(--olive)}
+.mx-quad.kill .mq-tag{color:var(--kill)}
+.mx-quad ul{list-style:none;padding:0;margin:0}
+.mx-quad li{font-size:11px;line-height:1.45;padding:3px 0;padding-left:12px;position:relative;color:var(--charcoal)}
+.mx-quad li::before{content:'';position:absolute;left:0;top:.65em;width:6px;height:1px;background:var(--charcoal)}
+.mx-quad.kill li{color:var(--kill);text-decoration:line-through;opacity:.8}
+.mx-quad.kill li::before{background:var(--kill)}
+.mx-quad li strong{color:var(--warn);font-weight:700;font-style:italic}
 
-/* ============ JOURNEYS GRID ============ */
-.journeys{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.j-card{border:1px solid var(--charcoal);background:var(--white);position:relative;display:flex;flex-direction:column}
-.j-card .j-head{padding:18px 22px}
-.j-card.j1 .j-head{background:var(--olive);color:var(--white)}
-.j-card.j2 .j-head{background:var(--charcoal);color:var(--white)}
-.j-card.j3 .j-head{background:var(--white);color:var(--charcoal);border-bottom:1px solid var(--charcoal)}
-.j-card .j-num{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--chartreuse);margin-bottom:6px}
-.j-card.j3 .j-num{color:var(--olive)}
-.j-card .j-name{font-size:18px;font-weight:700;line-height:1.15;letter-spacing:-.005em;margin-bottom:6px}
-.j-card .j-tag{font-family:monospace;font-size:11px;color:var(--chartreuse);background:rgba(0,0,0,.18);padding:2px 8px;display:inline-block;letter-spacing:.02em}
-.j-card.j3 .j-tag{color:var(--olive);background:var(--paper)}
-.j-card .j-body{padding:18px 22px;flex:1;display:flex;flex-direction:column}
-.j-card .j-trigger{font-size:10px;line-height:1.5;color:var(--charcoal);margin-bottom:12px;padding:8px 10px;background:var(--soft);border-left:3px solid var(--olive)}
-.j-card .j-trigger strong{color:var(--olive);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:9px;display:block;margin-bottom:4px}
-.j-card .j-steps-label{font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);margin-bottom:10px}
-.j-card .j-steps{display:flex;flex-direction:column;gap:8px;margin-bottom:14px;flex:1}
-.j-card .j-step{display:grid;grid-template-columns:48px 1fr;gap:10px;align-items:start}
-.j-card .j-step .d{font-size:10px;font-weight:700;color:var(--olive);font-family:monospace;padding-top:1px;letter-spacing:.05em}
-.j-card .j-step .t{font-size:11px;line-height:1.4;color:var(--charcoal)}
-.j-card .j-exits{padding-top:12px;border-top:1px dotted var(--line);font-size:10px;line-height:1.55;color:var(--charcoal)}
-.j-card .j-exits strong{color:var(--olive);font-weight:700;text-transform:uppercase;letter-spacing:.1em;font-size:9px;display:block;margin-bottom:6px}
+/* ============ KPI CARDS ============ */
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.kpi-card{border:1px solid var(--charcoal);background:var(--white);padding:22px 22px;border-top:5px solid var(--chartreuse)}
+.kpi-card .kp-num{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:4px}
+.kpi-card .kp-name{font-size:14px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:10px;letter-spacing:-.005em}
+.kpi-card .kp-target{font-size:11px;color:var(--charcoal);margin-bottom:14px;padding:8px 10px;background:var(--paper);border-left:3px solid var(--olive);line-height:1.5}
+.kpi-card .kp-target strong{color:var(--olive)}
+.kpi-card .kp-status{font-size:10px;line-height:1.6;color:var(--charcoal)}
+.kpi-card .kp-status .st-row{display:flex;gap:8px;align-items:start;margin-bottom:3px}
+.kpi-card .kp-status .st-icon{font-size:12px;line-height:1.2}
 
-/* ============ ENTRY → TRIGGER → EMAIL MAP ============ */
-.map-table{border:1px solid var(--charcoal)}
-.mt-row{display:grid;grid-template-columns:50px 1.3fr 1.5fr 1.5fr;gap:0;border-top:1px solid var(--line)}
-.mt-row.head{background:var(--olive);color:var(--white);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;border-top:none}
-.mt-row.head > div{padding:12px 16px}
-.mt-row > div{padding:14px 16px;font-size:11.5px;line-height:1.45;display:flex;align-items:center}
-.mt-row .mt-num{font-family:monospace;font-weight:700;color:var(--olive);font-size:13px;background:var(--paper);justify-content:center}
-.mt-row .mt-entry{color:var(--charcoal);font-weight:600}
-.mt-row .mt-trigger{color:var(--charcoal);font-family:monospace;font-size:10.5px;background:var(--soft)}
-.mt-row .mt-trigger strong{color:var(--olive);font-weight:700}
-.mt-row .mt-result{color:var(--charcoal)}
-.mt-row .mt-result strong{color:var(--olive);font-weight:700}
-.mt-row:nth-child(odd):not(.head){background:#fbfbf6}
+/* ============ WORKFLOWS TABLE ============ */
+.workflows{border:1px solid var(--charcoal)}
+.wf-row{display:grid;grid-template-columns:60px 1.5fr 1.3fr 80px 1.8fr;gap:0;border-top:1px solid var(--line)}
+.wf-row.head{background:var(--olive);color:var(--white);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;border-top:none}
+.wf-row.head > div{padding:12px 16px}
+.wf-row > div{padding:14px 16px;font-size:11.5px;line-height:1.45;display:flex;align-items:center}
+.wf-row .wf-num{font-family:monospace;font-weight:700;color:var(--olive);font-size:13px;background:var(--paper);justify-content:center}
+.wf-row .wf-name{font-weight:600;color:var(--charcoal)}
+.wf-row .wf-owner{color:var(--charcoal);font-size:10.5px}
+.wf-row .wf-effort{color:var(--olive);font-weight:600;font-family:monospace;font-size:11px;background:var(--soft);justify-content:center}
+.wf-row .wf-output{color:var(--charcoal);font-size:10.5px}
+.wf-row:nth-child(odd):not(.head){background:#fbfbf6}
+.wf-row.fix-row{border-left:4px solid var(--warn)}
 
-/* ============ FOUNDING LIFECYCLE TIMELINE ============ */
-.lifecycle{padding:24px 26px;background:var(--paper);border:1px solid var(--charcoal);border-left:5px solid var(--olive)}
-.lc-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:18px}
-.lc-head .lc-title{font-size:16px;font-weight:700;color:var(--charcoal);line-height:1.2}
-.lc-head .lc-meta{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--olive)}
-.lc-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
-.lc-cell{background:var(--white);border:1px solid var(--line);padding:12px 12px;text-align:center}
-.lc-cell .lc-day{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--olive);margin-bottom:4px}
-.lc-cell .lc-act{font-size:10.5px;line-height:1.3;color:var(--charcoal);font-weight:500}
-.lc-cell.milestone{background:var(--chartreuse);border-color:var(--charcoal)}
-.lc-cell.milestone .lc-day{color:var(--charcoal)}
-.lc-cell.charge{background:var(--charcoal);color:var(--white)}
-.lc-cell.charge .lc-day{color:var(--chartreuse)}
-.lc-cell.charge .lc-act{color:var(--white)}
-
-/* ============ TIERS ============ */
-.tiers{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
-.tier-card{padding:22px 22px;border:1px solid var(--charcoal);background:var(--paper);position:relative}
-.tier-card.t1{border-left:5px solid var(--chartreuse)}
-.tier-card.t2{border-left:5px solid var(--olive)}
-.tier-card.t3{border-left:5px dashed var(--olive)}
-.tier-card .tnum{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:6px}
-.tier-card h4{font-size:17px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:4px;letter-spacing:-.005em}
-.tier-card .price{font-size:13px;font-weight:600;color:var(--olive);margin-bottom:14px;font-style:italic}
-.tier-card ul{list-style:none;margin:0;padding:0}
-.tier-card li{position:relative;padding-left:18px;margin-bottom:6px;font-size:11px;line-height:1.45;color:var(--charcoal)}
-.tier-card li::before{content:'';position:absolute;left:0;top:.65em;width:10px;height:1px;background:var(--olive)}
-.tier-card li strong{color:var(--olive);font-weight:700}
+/* ============ DELIVERABLES STRIP ============ */
+.delivery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.del-card{border:1px solid var(--charcoal);background:var(--white);padding:18px 18px;border-left:5px solid var(--chartreuse);text-align:left}
+.del-card .dnum{font-size:32px;font-weight:700;color:var(--olive);line-height:1;letter-spacing:-.02em;margin-bottom:6px}
+.del-card .dname{font-size:12px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:4px}
+.del-card .dwhen{font-size:10px;line-height:1.4;font-style:italic;color:var(--olive)}
 
 /* ============ FOOTER ============ */
 .foot{margin-top:48px;padding-top:22px;border-top:1px solid var(--charcoal);display:flex;justify-content:space-between;align-items:baseline}
@@ -202,366 +180,329 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
 
 <section class="sheet">
 
-  <!-- DRAFT BANNER -->
+  <!-- BANNER -->
   <div class="draft-banner">
-    <span>Acquisition Scheme v6 · honors 4 newsletters/month ceiling</span>
-    <span>VOC research + persona validation still pending · see VALIDATION-LOG.md</span>
+    <span>V7 · Simplified Founding Journey · the minimum viable plan</span>
+    <span>4 best-judgment fixes flagged below · override any by replying</span>
   </div>
 
   <!-- HEADER -->
   <div class="head">
     <div class="rule-top"></div>
-    <div class="eyebrow">DSC Alliance · Acquisition Scheme · v6</div>
-    <h1>4 newsletters. <em>3 triggered journeys.</em> 1 destination.</h1>
-    <p class="sub">How DSC turns 6 entry points into Founding-Member signups before July 31, 2026 — within the operational ceiling of 4 broadcast newsletters per month. Triggered per-user emails are unlimited.</p>
+    <div class="eyebrow">DSC Alliance · Simplified Founding Journey · v7</div>
+    <h1>3 entry points. <em>2 journeys.</em> 1 destination.</h1>
+    <p class="sub">The minimum viable plan that still hits 150 Founding signups by July 31. Replaces the complex multi-journey architecture. Built on the effort × impact decision matrix.</p>
     <div class="meta">
-      <strong>Field Map 06</strong><br />May 2026<br />For Anne, Diana &amp; Cristian<br />v6 · constraint-aligned
+      <strong>Field Map 07</strong><br />May 2026<br />For Anne, Diana &amp; Cristian<br />v7 · canonical
     </div>
   </div>
 
-  <!-- THE CONSTRAINT -->
-  <div class="constraint">
-    <div class="c-num">4<small>/month max</small></div>
-    <div>
-      <div class="c-tag">The operational ceiling that resets the architecture</div>
-      <div class="c-body">DSC can send <strong>4 broadcast newsletters per month, no more</strong>. Triggered per-user emails (after a specific interaction) are unlimited — they don't count against the cap. <strong>Every weekly guide travels inside one of the 4 newsletters</strong>; no separate guide-drop send.</div>
+  <!-- THE NUMBER LINE -->
+  <div class="numbers">
+    <div class="num-cell">
+      <div class="nbig">3</div>
+      <div class="nlabel">Entry points</div>
+    </div>
+    <div class="num-cell">
+      <div class="nbig">2</div>
+      <div class="nlabel">Triggered journeys<br />+ 1 lite</div>
+    </div>
+    <div class="num-cell">
+      <div class="nbig">6</div>
+      <div class="nlabel">Workflows<br />Cristian builds</div>
+    </div>
+    <div class="num-cell">
+      <div class="nbig">3</div>
+      <div class="nlabel">KPIs that matter</div>
+    </div>
+    <div class="num-cell dest">
+      <div class="nbig">150</div>
+      <div class="nlabel">Founding signups<br />by July 31</div>
     </div>
   </div>
 
-  <!-- IDENTITY ANCHOR -->
-  <div class="identity">
-    <div class="id-tag">The identity anchor · every email reinforces this</div>
-    <div class="id-quote">You are a specialist physician who chose autonomy. DSC Alliance is the proof that the choice was right.</div>
+  <!-- THE 4 FIXES -->
+  <div class="fixes">
+    <div class="fx-tag">4 best-judgment fixes I added to the base plan</div>
+    <div class="fx-title">Override any of these by replying — the rest of the plan adjusts automatically</div>
+    <table>
+      <thead>
+        <tr><th>#</th><th>Fix</th><th>Why</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>FIX 1</td>
+          <td>Add ONE paid channel: <strong>LinkedIn lead ads · $30/day × 6 weeks · $1,260 total</strong></td>
+          <td>Base plan kills all paid + lead magnets. Needs a NEW-doctor acquisition beyond the 800-list one-time sort.</td>
+        </tr>
+        <tr>
+          <td>FIX 2</td>
+          <td>Add <strong>monthly free guide into Week 1 newsletter</strong></td>
+          <td>Yesterday you confirmed "one of the 4 newsletters will have a guide." Base plan dropped it.</td>
+        </tr>
+        <tr>
+          <td>FIX 3</td>
+          <td>Add <strong>Journey C lite for webinar registrants</strong> · 3 reminders + 1 follow-up (4 triggered emails)</td>
+          <td>Base plan keeps monthly Diana webinar but kills its promo journey. Webinars without reminders underattend ~40%.</td>
+        </tr>
+        <tr>
+          <td>FIX 4</td>
+          <td>Reframe approval KPI: <strong>"rejection rate stable, investigate if &gt;25%"</strong> (not "hit ≥80% approved")</td>
+          <td>Diana may be strict by design. Don't prescribe an approval rate before we have data.</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <!-- SKILLS APPLIED CHIPS -->
-  <div class="skills-strip">
-    <span class="ss-label">6 marketing skills applied</span>
-    <span class="chip">community-marketing</span>
-    <span class="chip">email-sequence</span>
-    <span class="chip">lead-magnets</span>
-    <span class="chip">churn-prevention</span>
-    <span class="chip">customer-research</span>
-    <span class="chip">revops</span>
-  </div>
-
-  <!-- ============ THE TWO BUCKETS ============ -->
+  <!-- ============ THE FUNNEL ============ -->
   <div class="section" style="margin-top:8px">
-    <div class="section-eyebrow">The two email buckets</div>
-    <h2 class="section-h2">Broadcast (capped) <em>vs</em> Triggered (unlimited)</h2>
+    <div class="section-eyebrow">The simplified funnel</div>
+    <h2 class="section-h2">3 entry points → 1 form → <em>1 destination</em></h2>
     <div class="section-rule"></div>
 
-    <div class="buckets">
-      <div class="bucket broadcast">
-        <div class="b-tag">Bucket 1 · Broadcast</div>
-        <div class="b-title">Newsletter sends</div>
-        <div class="b-cap">Capped at 4 per month</div>
-        <div class="b-body">Goes to every consenting contact on a fixed weekly schedule. <strong>Counts against the 4/month ceiling.</strong></div>
-        <ul class="b-list">
-          <li>Week 1, 2, 3, 4 · Tuesday 10am ET</li>
-          <li>Same content for everyone</li>
-          <li>Used for: the monthly free guide, member spotlight, webinar invite, Founding offer CTA</li>
-          <li>One bucket, four slots, full stop</li>
+    <div class="funnel">
+      <div class="funnel-row">
+        <div class="funnel-entry">
+          <div class="fe-num">Entry 1</div>
+          <div class="fe-title">800-doctor list</div>
+          <div class="fe-sub">Wk 1 sort campaign · one-time</div>
+        </div>
+        <div class="funnel-entry">
+          <div class="fe-num">Entry 2</div>
+          <div class="fe-title">Founding LP</div>
+          <div class="fe-sub">Organic + newsletter + LinkedIn org</div>
+        </div>
+        <div class="funnel-entry fix">
+          <div class="fe-num">Entry 3 · FIX 1</div>
+          <div class="fe-title">LinkedIn paid leads</div>
+          <div class="fe-sub">$30/day · 6 weeks · ~$1,260</div>
+        </div>
+      </div>
+
+      <div class="funnel-arrow">↓</div>
+
+      <div class="funnel-form">
+        <div class="ff-tag">All routes converge</div>
+        <div class="ff-title">ONE Founding application form (card on file via Stripe)</div>
+      </div>
+
+      <div class="funnel-branch">
+        <div class="funnel-leg yes">
+          <div class="fl-tag">If applied</div>
+          <div class="fl-title">Diana reviews within 5 days</div>
+          <div class="fl-sub">Approved → free year begins · Rejected → archived</div>
+        </div>
+        <div class="funnel-leg no">
+          <div class="fl-tag">If not applied</div>
+          <div class="fl-title">Journey A · Fast-Lane Push</div>
+          <div class="fl-sub">4 emails over 10 days · then newsletter only if still no application</div>
+        </div>
+      </div>
+
+      <div class="funnel-dest">
+        <div class="fd-title">Approved Founding Members → 12 months free · 14-touch lifecycle drip · Day 366 Stripe charges $87 → Alliance for life</div>
+        <div class="fd-sub">Webinar registrations also trigger Journey C lite [FIX 3] in parallel</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ EFFORT × IMPACT MATRIX ============ -->
+  <div class="section">
+    <div class="section-eyebrow">The effort × impact matrix</div>
+    <h2 class="section-h2">Do · Build · <em>Kill</em></h2>
+    <div class="section-rule"></div>
+    <p class="section-lead">Every component in the original complex plan was scored against effort × impact. Result: 8 things ship in V1. 11 things deferred or killed.</p>
+
+    <div class="matrix">
+      <div class="mx-cell mx-corner"></div>
+      <div class="mx-cell mx-col-head">Low effort</div>
+      <div class="mx-cell mx-col-head">High effort</div>
+
+      <div class="mx-cell mx-row-head">High impact</div>
+      <div class="mx-cell mx-quad do-first">
+        <div class="mq-tag">Do first · V1</div>
+        <ul>
+          <li>800-list sort</li>
+          <li>Weekly newsletter (Tuesday)</li>
+          <li>Founding LP /join/</li>
+          <li>Journey A (Fast-Lane Push)</li>
+          <li>Weekly newsletter slow cooker</li>
+          <li><strong>LinkedIn paid lead ads · FIX 1</strong></li>
+          <li>Diana's manual approval queue</li>
+          <li><strong>Monthly guide in Wk 1 newsletter · FIX 2</strong></li>
         </ul>
       </div>
-      <div class="bucket triggered">
-        <div class="b-tag">Bucket 2 · Triggered</div>
-        <div class="b-title">Per-user behavior emails</div>
-        <div class="b-cap">Unlimited · per individual contact</div>
-        <div class="b-body">Fires when one specific user takes one specific action. <strong>Does not count against the 4/month cap.</strong></div>
-        <ul class="b-list">
-          <li>3 nurture journeys (Fast Lane · Nurture · Webinar follow-up)</li>
-          <li>17-touch Founding Lifecycle over 12 months</li>
-          <li>Layer 1 transactional (welcome, payment, profile updated)</li>
-          <li>Health-score alerts, save offers, win-back</li>
+      <div class="mx-cell mx-quad build">
+        <div class="mq-tag">Build engine · runs Phase 4+</div>
+        <ul>
+          <li>Monthly Diana webinar (first one Wk 6 with C lite)</li>
+          <li>Founding lifecycle drip (14 touches/12mo)</li>
+          <li><strong>Journey C lite · FIX 3</strong> (3 reminders + 1 follow-up)</li>
+        </ul>
+      </div>
+
+      <div class="mx-cell mx-row-head">Low impact</div>
+      <div class="mx-cell mx-quad maybe">
+        <div class="mq-tag">If time allows</div>
+        <ul>
+          <li>LinkedIn organic (Diana, 1×/week)</li>
+          <li>FB Group (low-touch, Diana hosts when she can)</li>
+        </ul>
+      </div>
+      <div class="mx-cell mx-quad kill">
+        <div class="mq-tag">Killed for V1</div>
+        <ul>
+          <li>Standalone lead-magnet nurture journey</li>
+          <li>Standalone webinar journey (replaced by C lite)</li>
+          <li>Photo collection / UGC pipeline</li>
+          <li>Member spotlights</li>
+          <li>YouTube dedicated LP</li>
+          <li>Meta paid lead-magnet ads</li>
+          <li>64-tag taxonomy</li>
+          <li>Refer-a-colleague campaign</li>
+          <li>Mega-webinar separate from monthly</li>
+          <li>Founding Health Score complexity</li>
+          <li>Cancel flow with offer-to-reason matrix</li>
         </ul>
       </div>
     </div>
   </div>
 
-  <!-- ============ 4 MONTHLY NEWSLETTER SLOTS ============ -->
+  <!-- ============ THE 3 KPIs ============ -->
   <div class="section">
-    <div class="section-eyebrow">The 4 monthly newsletter slots</div>
-    <h2 class="section-h2">One ceiling · <em>four jobs</em></h2>
+    <div class="section-eyebrow">The 3 KPIs that determine success</div>
+    <h2 class="section-h2">If we only measure three things, <em>these are them</em></h2>
     <div class="section-rule"></div>
-    <p class="section-lead">Each newsletter has a fixed editorial job. The 12 monthly free guides live inside Week 1. The 12 monthly webinars are promoted in Week 3. The Founding offer CTA appears in all four.</p>
 
-    <div class="slots">
-      <div class="slot">
-        <div class="sl-num">Week 1</div>
-        <div class="sl-title">Industry signal<em>+ monthly free guide</em></div>
-        <ul>
-          <li>1 industry headline</li>
-          <li>Diana POV</li>
-          <li><strong>This month's free guide</strong> (download link)</li>
-          <li>Founding offer CTA</li>
-        </ul>
+    <div class="kpis">
+      <div class="kpi-card">
+        <div class="kp-num">KPI 1</div>
+        <div class="kp-name">Founding signups by July 31</div>
+        <div class="kp-target"><strong>Target: 150</strong> Founding applicants with card on file (approved or pending). Source: Stripe Setup Intent + GHL form count.</div>
+        <div class="kp-status">
+          <div class="st-row"><span class="st-icon">✅</span>On track if cumulative by Jun 30 ≥ 75</div>
+          <div class="st-row"><span class="st-icon">⚠️</span>At risk if 40-74</div>
+          <div class="st-row"><span class="st-icon">❌</span>Off track if &lt; 40</div>
+        </div>
       </div>
-      <div class="slot">
-        <div class="sl-num">Week 2</div>
-        <div class="sl-title">Member spotlight<em>community + identity</em></div>
-        <ul>
-          <li>1 featured Founding member</li>
-          <li>Their photo + specialty + state</li>
-          <li>Their story in their words</li>
-          <li>Founding offer CTA</li>
-        </ul>
+
+      <div class="kpi-card">
+        <div class="kp-num">KPI 2</div>
+        <div class="kp-name">Weekly newsletter open rate</div>
+        <div class="kp-target"><strong>Target: 30-35%</strong> (physician benchmark middle of 30-50%). Source: GHL native email analytics.</div>
+        <div class="kp-status">
+          <div class="st-row"><span class="st-icon">✅</span>On track if 4-week avg ≥ 32%</div>
+          <div class="st-row"><span class="st-icon">⚠️</span>At risk if 25-31%</div>
+          <div class="st-row"><span class="st-icon">❌</span>Off track if &lt; 25% → pause LinkedIn paid, audit subjects</div>
+        </div>
       </div>
-      <div class="slot">
-        <div class="sl-num">Week 3</div>
-        <div class="sl-title">Webinar week<em>conversion event</em></div>
-        <ul>
-          <li>Webinar reminder (T-3)</li>
-          <li>1 teaching teaser from the host</li>
-          <li>Link to register</li>
-          <li>Founding offer CTA</li>
-        </ul>
-      </div>
-      <div class="slot">
-        <div class="sl-num">Week 4</div>
-        <div class="sl-title">Final push<em>scarcity + count</em></div>
-        <ul>
-          <li>"X days left until [next month]"</li>
-          <li>Cumulative member count</li>
-          <li>Voice from a recent joiner</li>
-          <li>Founding offer CTA</li>
-        </ul>
+
+      <div class="kpi-card">
+        <div class="kp-num">KPI 3 · FIX 4</div>
+        <div class="kp-name">Approval health (reframed)</div>
+        <div class="kp-target">Rejection rate <strong>stable and below 25%</strong>. Don't prescribe an approval target — Diana may be strict by design.</div>
+        <div class="kp-status">
+          <div class="st-row"><span class="st-icon">✅</span>Stable rejection rate</div>
+          <div class="st-row"><span class="st-icon">⚠️</span>If &gt; 25% → investigate cause: LP misalignment vs Diana criteria shift</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- ============ THREE TRIGGERED JOURNEYS ============ -->
+  <!-- ============ 6 WORKFLOWS ============ -->
   <div class="section">
-    <div class="section-eyebrow">The 3 triggered journeys</div>
-    <h2 class="section-h2">Per user · per behavior · <em>off the cap</em></h2>
+    <div class="section-eyebrow">The workflows Cristian builds</div>
+    <h2 class="section-h2">5 core · <em>1 added by FIX 3</em></h2>
     <div class="section-rule"></div>
-    <p class="section-lead">Every contact who takes a specific action enters one journey. Each journey is sent to that one person, on their personal clock — so a thousand triggered journeys don't add to the broadcast count.</p>
+    <p class="section-lead">Build these in this priority order. Build nothing else until they're stable. Total build effort: 5 days (1 week) for Cristian, then ongoing weekly content from Anne.</p>
 
-    <div class="journeys">
-
-      <!-- JOURNEY 1 -->
-      <div class="j-card j1">
-        <div class="j-head">
-          <div class="j-num">Journey 1 · Fast Lane</div>
-          <div class="j-name">Hot lead → Founding</div>
-          <span class="j-tag">flow:fast-lane</span>
-        </div>
-        <div class="j-body">
-          <div class="j-trigger">
-            <strong>Triggered when</strong>
-            YouTube LP form submitted · Diana flagship registered · paid-ad form filled · 800-list contact clicked "yes-keep-me-posted"
-          </div>
-          <div class="j-steps-label">4 emails over 10 days</div>
-          <div class="j-steps">
-            <div class="j-step"><div class="d">Day 0</div><div class="t">Welcome + free 12-month offer (one email)</div></div>
-            <div class="j-step"><div class="d">Day 3</div><div class="t">Member testimonial · 60-sec video</div></div>
-            <div class="j-step"><div class="d">Day 6</div><div class="t">Itemized value · what's included</div></div>
-            <div class="j-step"><div class="d">Day 10</div><div class="t">Final urgency · days left until Jul 31</div></div>
-          </div>
-          <div class="j-exits"><strong>Exits</strong>Application submitted → Founding Lifecycle. Day 14 no application → demote to newsletter-only.</div>
-        </div>
+    <div class="workflows">
+      <div class="wf-row head">
+        <div>#</div><div>Workflow</div><div>Owner</div><div>Effort</div><div>Output</div>
       </div>
-
-      <!-- JOURNEY 2 -->
-      <div class="j-card j2">
-        <div class="j-head">
-          <div class="j-num">Journey 2 · Nurture</div>
-          <div class="j-name">Engaged lead → Founding</div>
-          <span class="j-tag">flow:nurture</span>
-        </div>
-        <div class="j-body">
-          <div class="j-trigger">
-            <strong>Triggered when</strong>
-            Free guide downloaded (LP) · monthly webinar registered · clicked Founding offer CTA inside a newsletter
-          </div>
-          <div class="j-steps-label">5 emails over 14 days</div>
-          <div class="j-steps">
-            <div class="j-step"><div class="d">Day 0</div><div class="t">Deliver the value they asked for (guide / reminder / link)</div></div>
-            <div class="j-step"><div class="d">Day 3</div><div class="t">Member case story: "Dr Lee did this last year"</div></div>
-            <div class="j-step"><div class="d">Day 7</div><div class="t">First Founding offer (now they've consumed value)</div></div>
-            <div class="j-step"><div class="d">Day 11</div><div class="t">Cross-channel invite: next webinar OR Diana flagship</div></div>
-            <div class="j-step"><div class="d">Day 14</div><div class="t">Last call before demotion</div></div>
-          </div>
-          <div class="j-exits"><strong>Exits</strong>Application submitted → Founding Lifecycle. Day 14 no application → demote to newsletter-only.</div>
-        </div>
+      <div class="wf-row">
+        <div class="wf-num">WF-01</div>
+        <div class="wf-name">800-list sort campaign</div>
+        <div class="wf-owner">Cristian builds · Anne writes · Diana validates</div>
+        <div class="wf-effort">1 day</div>
+        <div class="wf-output">Touch 1 + Touch 2 to 800 list, behavior tagged</div>
       </div>
-
-      <!-- JOURNEY 3 -->
-      <div class="j-card j3">
-        <div class="j-head">
-          <div class="j-num">Journey 3 · Webinar follow-up</div>
-          <div class="j-name">Attendee → Founding</div>
-          <span class="j-tag">flow:webinar</span>
-        </div>
-        <div class="j-body">
-          <div class="j-trigger">
-            <strong>Triggered when</strong>
-            Webinar registration (monthly OR Diana flagship) — pre-reminders + post-attendance branch
-          </div>
-          <div class="j-steps-label">3 reminders + 2-3 follow-ups</div>
-          <div class="j-steps">
-            <div class="j-step"><div class="d">T-7</div><div class="t">Calendar invite + confirmation</div></div>
-            <div class="j-step"><div class="d">T-1</div><div class="t">Tomorrow at [time] · the link</div></div>
-            <div class="j-step"><div class="d">T-1h</div><div class="t">Starting in 1 hour</div></div>
-            <div class="j-step"><div class="d">T+1</div><div class="t">If attended: recording + Founding CTA<br />If no-show: "We missed you" + recording</div></div>
-            <div class="j-step"><div class="d">T+7</div><div class="t">"We're holding your Founding spot"</div></div>
-          </div>
-          <div class="j-exits"><strong>Exits</strong>Application submitted → Founding Lifecycle. Day 14 post-webinar no app → newsletter-only.</div>
-        </div>
+      <div class="wf-row">
+        <div class="wf-num">WF-02</div>
+        <div class="wf-name">Founding application + welcome</div>
+        <div class="wf-owner">Cristian builds · uses website team Email 14</div>
+        <div class="wf-effort">1.5 days</div>
+        <div class="wf-output">/membership/ form live · Stripe Setup Intent · admin alert</div>
       </div>
-
-    </div>
-  </div>
-
-  <!-- ============ ENTRY → TRIGGER → EMAIL MAP ============ -->
-  <div class="section">
-    <div class="section-eyebrow">Entry · trigger · email</div>
-    <h2 class="section-h2">How every contact <em>actually moves</em></h2>
-    <div class="section-rule"></div>
-
-    <div class="map-table">
-      <div class="mt-row head">
-        <div>#</div><div>Entry point</div><div>What triggers</div><div>What gets sent · routes to</div>
+      <div class="wf-row">
+        <div class="wf-num">WF-03</div>
+        <div class="wf-name">Admin decision (approve / reject)</div>
+        <div class="wf-owner">Cristian builds · Diana exercises</div>
+        <div class="wf-effort">0.5 day</div>
+        <div class="wf-output">GHL admin view with buttons · downstream tag changes fire</div>
       </div>
-      <div class="mt-row">
-        <div class="mt-num">①</div>
-        <div class="mt-entry">Newsletter form (homepage / footer)</div>
-        <div class="mt-trigger"><strong>+src:newsletter</strong><br />+intent:cool</div>
-        <div class="mt-result">1 welcome email → <strong>newsletter only</strong> (4/month broadcasts)</div>
+      <div class="wf-row">
+        <div class="wf-num">WF-25</div>
+        <div class="wf-name">Weekly newsletter (cron)</div>
+        <div class="wf-owner">Cristian builds · Anne writes weekly</div>
+        <div class="wf-effort">0.5 day + 2-3h/wk</div>
+        <div class="wf-output">Tuesday 10am ET broadcast · monthly guide in Wk 1 (FIX 2)</div>
       </div>
-      <div class="mt-row">
-        <div class="mt-num">②</div>
-        <div class="mt-entry">Free guide LP (per month's guide)</div>
-        <div class="mt-trigger"><strong>+src:guide-{month}</strong><br />+intent:warm</div>
-        <div class="mt-result">Guide delivered + Journey 2 Day 0 → <strong>Nurture sequence (5 emails)</strong></div>
+      <div class="wf-row">
+        <div class="wf-num">WF-04</div>
+        <div class="wf-name">Journey A (Fast-Lane Founding Push)</div>
+        <div class="wf-owner">Cristian builds · Anne writes 4 emails</div>
+        <div class="wf-effort">1 day</div>
+        <div class="wf-output">4-email automated sequence over 10 days for high-intent leads</div>
       </div>
-      <div class="mt-row">
-        <div class="mt-num">③</div>
-        <div class="mt-entry">Monthly webinar registration</div>
-        <div class="mt-trigger"><strong>+src:webinar-monthly</strong><br />+intent:warm</div>
-        <div class="mt-result">T-7 / T-1 / T-1h reminders → <strong>Journey 3 Webinar follow-up</strong></div>
-      </div>
-      <div class="mt-row">
-        <div class="mt-num">④</div>
-        <div class="mt-entry">Quarterly Diana flagship registration</div>
-        <div class="mt-trigger"><strong>+src:webinar-diana</strong><br />+intent:hot</div>
-        <div class="mt-result">Same as ③ + Diana flagship variant tags → <strong>Journey 3 (priority)</strong></div>
-      </div>
-      <div class="mt-row">
-        <div class="mt-num">⑤</div>
-        <div class="mt-entry">YouTube → landing page</div>
-        <div class="mt-trigger"><strong>+src:youtube</strong><br />+intent:warm</div>
-        <div class="mt-result">Day 0 of Fast Lane → <strong>Journey 1 (4 emails / 10 days)</strong></div>
-      </div>
-      <div class="mt-row">
-        <div class="mt-num">⑥</div>
-        <div class="mt-entry">800-list re-engagement (Wk 1 sort)</div>
-        <div class="mt-trigger"><strong>+src:house-800</strong><br />+intent: per click behavior</div>
-        <div class="mt-result">Clicked "yes" → <strong>Journey 1</strong> · Opened only → newsletter only · Cold → suppress 30d then retry</div>
-      </div>
-      <div class="mt-row">
-        <div class="mt-num">⑦</div>
-        <div class="mt-entry">Founding application submitted</div>
-        <div class="mt-trigger"><strong>+state:applicant</strong><br />pause active journey</div>
-        <div class="mt-result">Layer 1: admin alert + courtesy email · waits for Diana approval (target &lt;72h)</div>
-      </div>
-      <div class="mt-row">
-        <div class="mt-num">⑧</div>
-        <div class="mt-entry">Diana clicks Approve</div>
-        <div class="mt-trigger"><strong>+state:active-founding</strong><br />+flow:founding-lifecycle</div>
-        <div class="mt-result">Layer 1: Welcome → 48h delay → <strong>Founding Lifecycle starts (12-month triggered drip)</strong></div>
+      <div class="wf-row fix-row">
+        <div class="wf-num">WF-05</div>
+        <div class="wf-name">Journey C lite (webinar follow-up) · FIX 3</div>
+        <div class="wf-owner">Cristian builds · Anne writes 4 emails</div>
+        <div class="wf-effort">0.5 day</div>
+        <div class="wf-output">3 reminders (T-7/T-1/T-1h) + 1 follow-up per webinar registrant</div>
       </div>
     </div>
   </div>
 
-  <!-- ============ FOUNDING LIFECYCLE TIMELINE ============ -->
+  <!-- ============ WHAT MEMBERS GET ============ -->
   <div class="section">
-    <div class="section-eyebrow">Founding Lifecycle · post-approval</div>
-    <h2 class="section-h2">17 triggered touches · <em>12 months · per user</em></h2>
+    <div class="section-eyebrow">What every Founding member gets · V1 promise</div>
+    <h2 class="section-h2">The 7-item value bundle <em>· no fluff</em></h2>
     <div class="section-rule"></div>
-    <p class="section-lead">After Diana approves the application, this 12-month sequence runs on the member's personal clock. Each touch is triggered by their signup date — none count against the 4/month broadcast cap.</p>
 
-    <div class="lifecycle">
-      <div class="lc-head">
-        <div class="lc-title">Per-user clock starts at approval (Day 0)</div>
-        <div class="lc-meta">Triggered · not broadcast</div>
+    <div class="delivery">
+      <div class="del-card">
+        <div class="dnum">52</div>
+        <div class="dname">Weekly newsletters</div>
+        <div class="dwhen">Tuesdays · with monthly guide in Week 1</div>
       </div>
-      <div class="lc-grid">
-        <div class="lc-cell"><div class="lc-day">Day 0</div><div class="lc-act">Founding Welcome (Layer 1)</div></div>
-        <div class="lc-cell"><div class="lc-day">Day 2</div><div class="lc-act">Verify profile reminder</div></div>
-        <div class="lc-cell"><div class="lc-day">Day 3</div><div class="lc-act">Join FB Group invite</div></div>
-        <div class="lc-cell"><div class="lc-day">Day 14</div><div class="lc-act">Photo Ask #1 (headshot)</div></div>
-        <div class="lc-cell"><div class="lc-day">Day 21</div><div class="lc-act">Next monthly webinar invite</div></div>
-        <div class="lc-cell"><div class="lc-day">Day 30</div><div class="lc-act">"How's month 1?" feedback</div></div>
-        <div class="lc-cell"><div class="lc-day">Day 60</div><div class="lc-act">Photo Ask #2 (clinic)</div></div>
-        <div class="lc-cell"><div class="lc-day">Day 90</div><div class="lc-act">Diana flagship invite</div></div>
-        <div class="lc-cell"><div class="lc-day">Day 120</div><div class="lc-act">Photo Ask #3 (video)</div></div>
-        <div class="lc-cell"><div class="lc-day">Day 150</div><div class="lc-act">Refer-a-colleague campaign</div></div>
-        <div class="lc-cell milestone"><div class="lc-day">Day 180</div><div class="lc-act">Halfway content recap</div></div>
-        <div class="lc-cell"><div class="lc-day">Day 240</div><div class="lc-act">Alliance preview</div></div>
-        <div class="lc-cell"><div class="lc-day">Day 300</div><div class="lc-act">Diana personal video</div></div>
-        <div class="lc-cell"><div class="lc-day">Day 320</div><div class="lc-act">Card-expiry check (if needed)</div></div>
-        <div class="lc-cell milestone"><div class="lc-day">Day 335</div><div class="lc-act">Conversion sequence starts</div></div>
-        <div class="lc-cell"><div class="lc-day">Day 358</div><div class="lc-act">7-day notice</div></div>
-        <div class="lc-cell charge"><div class="lc-day">Day 366</div><div class="lc-act">Stripe charges $87 → Alliance</div></div>
+      <div class="del-card">
+        <div class="dnum">12</div>
+        <div class="dname">Monthly free guides</div>
+        <div class="dwhen">Delivered inside Week 1 newsletter</div>
+      </div>
+      <div class="del-card">
+        <div class="dnum">12</div>
+        <div class="dname">Monthly 30-min webinars</div>
+        <div class="dwhen">With Journey C lite reminders</div>
+      </div>
+      <div class="del-card">
+        <div class="dnum">4</div>
+        <div class="dname">Diana flagship webinars</div>
+        <div class="dwhen">Quarterly · 1 hour</div>
       </div>
     </div>
-  </div>
 
-  <!-- ============ TIERS ============ -->
-  <div class="section">
-    <div class="section-eyebrow">Tier offers · the upgrade path</div>
-    <h2 class="section-h2">Founding → Alliance → <em>Accelerator</em></h2>
-    <div class="section-rule"></div>
-
-    <div class="tiers">
-      <div class="tier-card t1">
-        <div class="tnum">Tier 1 · The hook</div>
-        <h4>Founding Member</h4>
-        <div class="price">FREE for 12 months · register by Jul 31</div>
-        <ul>
-          <li>National DSC <strong>directory listing</strong></li>
-          <li>4 newsletters/month (incl. monthly free guide)</li>
-          <li>12 monthly webinars + 4 Diana flagships/year</li>
-          <li>Private FB Group access</li>
-          <li>Member spotlight opportunity</li>
-          <li>Refer-a-colleague program</li>
-          <li>Auto-converts to <strong>$87/mo Alliance</strong> at month 13 (locked for life)</li>
-        </ul>
-      </div>
-      <div class="tier-card t2">
-        <div class="tnum">Tier 2 · The lifer</div>
-        <h4>Alliance Member</h4>
-        <div class="price">$87 grandfathered · $97 standard · monthly</div>
-        <ul>
-          <li>Everything in Founding</li>
-          <li><strong>DSC Practice Launch Course</strong></li>
-          <li><strong>Full template library</strong> — legal, financial, scripts</li>
-          <li>Live webinar Q&A access</li>
-          <li>Paid webinar recordings</li>
-          <li>Priority directory placement</li>
-        </ul>
-      </div>
-      <div class="tier-card t3">
-        <div class="tnum">Tier 3 · The cohort</div>
-        <h4>DSC Accelerator</h4>
-        <div class="price">$597/month · 12-month cohort · cap of 30</div>
-        <ul>
-          <li>Everything in Alliance</li>
-          <li><strong>Quarterly Mastermind</strong> with expert faculty</li>
-          <li><strong>Monthly group Q&A</strong> with Diana</li>
-          <li>Cohort Slack with peers</li>
-          <li>1:1 onboarding call</li>
-          <li>Annual flagship event</li>
-        </ul>
-      </div>
+    <div style="margin-top:14px;padding:14px 20px;background:var(--paper);border-left:3px solid var(--olive);font-size:11px;line-height:1.5;color:var(--charcoal)">
+      <strong style="color:var(--olive);font-weight:700">Plus always-on:</strong> National DSC directory listing · Private FB Group access · Card on file → auto-converts to $87/mo Alliance at month 13 (locked for life)
     </div>
   </div>
 
   <!-- ============ FOOTER ============ -->
   <div class="foot">
     <div class="wm">DSC Alliance · Brave New Media</div>
-    <div class="copy">Field Map 06 · v6 · constraint-aligned · 2026-05-15<br />4 newsletters/month · 3 triggered journeys · 17-touch Founding Lifecycle · 6 marketing skills synthesized</div>
+    <div class="copy">Field Map 07 · v7 canonical · 2026-05-15<br />Replaces v4, v5, v6 · 4 best-judgment fixes flagged · override any by reply</div>
   </div>
 
 </section>
