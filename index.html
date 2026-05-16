@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>DSC Alliance — Simplified Founding Journey v7 · Brave New Media</title>
+<title>DSC Alliance — Simplified Founding Journey v7.1 · Brave New Media</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet" />
@@ -30,7 +30,7 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
   padding:56px 64px 64px;
 }
 
-/* ============ V7 BANNER ============ */
+/* ============ BANNER ============ */
 .draft-banner{
   position:absolute;top:0;left:0;right:0;
   background:var(--charcoal);color:var(--chartreuse);
@@ -51,7 +51,7 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
 
 /* ============ THE NUMBER LINE ============ */
 .numbers{
-  margin:24px 0 36px;
+  margin:24px 0 24px;
   display:grid;grid-template-columns:repeat(5,1fr);gap:0;
   border:1px solid var(--charcoal);
 }
@@ -62,13 +62,26 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
 .num-cell.dest .nbig{color:var(--charcoal)}
 .num-cell .nlabel{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--olive);margin-top:6px;line-height:1.3}
 
+/* ============ ACQUISITION GAP CALLOUT ============ */
+.gap{
+  margin:18px 0 24px;padding:18px 24px;
+  background:#fef2f2;border:1px solid var(--kill);border-left:5px solid var(--kill);
+  display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:start;
+}
+.gap .g-icon{font-size:24px;line-height:1}
+.gap .g-tag{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--kill);margin-bottom:6px}
+.gap .g-title{font-size:14px;font-weight:700;color:var(--charcoal);margin-bottom:8px;line-height:1.3}
+.gap .g-body{font-size:11.5px;line-height:1.55;color:var(--charcoal)}
+.gap .g-body strong{color:var(--kill);font-weight:700}
+.gap .g-body em{color:var(--charcoal);font-style:italic}
+
 /* ============ FIXES CALLOUT ============ */
 .fixes{
-  margin:24px 0;padding:20px 24px;
+  margin:24px 0;padding:18px 22px;
   background:var(--paper);border:1px solid var(--charcoal);border-left:5px solid var(--warn);
 }
 .fixes .fx-tag{font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--warn);margin-bottom:8px}
-.fixes .fx-title{font-size:14px;font-weight:700;color:var(--charcoal);margin-bottom:12px;line-height:1.3}
+.fixes .fx-title{font-size:13px;font-weight:700;color:var(--charcoal);margin-bottom:10px;line-height:1.3}
 .fixes table{width:100%;border-collapse:collapse;font-size:11px}
 .fixes th{text-align:left;font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--olive);padding:6px 10px 6px 0;border-bottom:1px solid var(--line)}
 .fixes td{padding:8px 10px 8px 0;vertical-align:top;line-height:1.4;border-bottom:1px solid var(--line)}
@@ -85,11 +98,8 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
 
 /* ============ FUNNEL DIAGRAM ============ */
 .funnel{background:var(--paper);border:1px solid var(--charcoal);padding:30px 30px}
-.funnel-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
-.funnel-row.one{grid-template-columns:1fr}
-.funnel-row.two{grid-template-columns:1fr 1fr}
+.funnel-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:18px}
 .funnel-entry{border:1px solid var(--charcoal);background:var(--white);padding:14px 16px;text-align:center;position:relative}
-.funnel-entry.fix{border-left:4px solid var(--warn)}
 .funnel-entry .fe-num{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--olive);margin-bottom:4px}
 .funnel-entry .fe-title{font-size:13px;font-weight:700;color:var(--charcoal);line-height:1.2}
 .funnel-entry .fe-sub{font-size:10px;color:var(--charcoal);margin-top:4px;font-style:italic;line-height:1.4}
@@ -182,25 +192,25 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
 
   <!-- BANNER -->
   <div class="draft-banner">
-    <span>V7 · Simplified Founding Journey · the minimum viable plan</span>
-    <span>4 best-judgment fixes flagged below · override any by replying</span>
+    <span>V8 · Simplified Founding Journey + LP &amp; Webinar Zoom-In</span>
+    <span>2 fixes applied · 2 new 10-email sequences added (WF-06 LP abandonment + WF-07 webinar nurture)</span>
   </div>
 
   <!-- HEADER -->
   <div class="head">
     <div class="rule-top"></div>
-    <div class="eyebrow">DSC Alliance · Simplified Founding Journey · v7</div>
-    <h1>3 entry points. <em>2 journeys.</em> 1 destination.</h1>
-    <p class="sub">The minimum viable plan that still hits 150 Founding signups by July 31. Replaces the complex multi-journey architecture. Built on the effort × impact decision matrix.</p>
+    <div class="eyebrow">DSC Alliance · Simplified Founding Journey · v8 · with LP &amp; Webinar Zoom-In</div>
+    <h1>2 entry points. <em>2 journeys.</em> 1 destination.</h1>
+    <p class="sub">The minimum viable plan that ships. Plus the two highest-leverage moments fully spec'd: the Founding LP (4 exit states) and the webinar (4-stage conversion engine) — each with its own 10-email triggered nurture.</p>
     <div class="meta">
-      <strong>Field Map 07</strong><br />May 2026<br />For Anne, Diana &amp; Cristian<br />v7 · canonical
+      <strong>Field Map 08</strong><br />May 2026<br />For Anne, Diana &amp; Cristian<br />v8 · canonical
     </div>
   </div>
 
   <!-- THE NUMBER LINE -->
   <div class="numbers">
     <div class="num-cell">
-      <div class="nbig">3</div>
+      <div class="nbig">2</div>
       <div class="nlabel">Entry points</div>
     </div>
     <div class="num-cell">
@@ -221,34 +231,34 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
     </div>
   </div>
 
-  <!-- THE 4 FIXES -->
+  <!-- ACQUISITION GAP -->
+  <div class="gap">
+    <div class="g-icon">⚠️</div>
+    <div>
+      <div class="g-tag">Acquisition gap · flagged once</div>
+      <div class="g-title">With no paid acquisition, expected total is 50-90 signups · 60-100 short of the 150 target</div>
+      <div class="g-body">Without LinkedIn paid / Meta paid / lead-magnet ads, the only acquisition mechanisms are the 800-list sort (one-time event) + Founding LP organic traffic. <strong>To close the gap:</strong> add a paid channel back · or Diana commits to 3+ LinkedIn posts/week · or lower the target to ~75. <em>Plan stays as-is for now. Decision deferred.</em></div>
+    </div>
+  </div>
+
+  <!-- THE 2 FIXES KEPT -->
   <div class="fixes">
-    <div class="fx-tag">4 best-judgment fixes I added to the base plan</div>
-    <div class="fx-title">Override any of these by replying — the rest of the plan adjusts automatically</div>
+    <div class="fx-tag">2 fixes kept · overrides applied</div>
+    <div class="fx-title">FIX 1 (LinkedIn paid) and FIX 4 (KPI reframing) removed at user direction</div>
     <table>
       <thead>
         <tr><th>#</th><th>Fix</th><th>Why</th></tr>
       </thead>
       <tbody>
         <tr>
-          <td>FIX 1</td>
-          <td>Add ONE paid channel: <strong>LinkedIn lead ads · $30/day × 6 weeks · $1,260 total</strong></td>
-          <td>Base plan kills all paid + lead magnets. Needs a NEW-doctor acquisition beyond the 800-list one-time sort.</td>
-        </tr>
-        <tr>
           <td>FIX 2</td>
           <td>Add <strong>monthly free guide into Week 1 newsletter</strong></td>
-          <td>Yesterday you confirmed "one of the 4 newsletters will have a guide." Base plan dropped it.</td>
+          <td>Yesterday's confirmation: "one of the 4 newsletters will have a guide"</td>
         </tr>
         <tr>
           <td>FIX 3</td>
           <td>Add <strong>Journey C lite for webinar registrants</strong> · 3 reminders + 1 follow-up (4 triggered emails)</td>
-          <td>Base plan keeps monthly Diana webinar but kills its promo journey. Webinars without reminders underattend ~40%.</td>
-        </tr>
-        <tr>
-          <td>FIX 4</td>
-          <td>Reframe approval KPI: <strong>"rejection rate stable, investigate if &gt;25%"</strong> (not "hit ≥80% approved")</td>
-          <td>Diana may be strict by design. Don't prescribe an approval rate before we have data.</td>
+          <td>Webinars without reminders underattend ~40%</td>
         </tr>
       </tbody>
     </table>
@@ -257,7 +267,7 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
   <!-- ============ THE FUNNEL ============ -->
   <div class="section" style="margin-top:8px">
     <div class="section-eyebrow">The simplified funnel</div>
-    <h2 class="section-h2">3 entry points → 1 form → <em>1 destination</em></h2>
+    <h2 class="section-h2">2 entry points → 1 form → <em>1 destination</em></h2>
     <div class="section-rule"></div>
 
     <div class="funnel">
@@ -265,17 +275,12 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
         <div class="funnel-entry">
           <div class="fe-num">Entry 1</div>
           <div class="fe-title">800-doctor list</div>
-          <div class="fe-sub">Wk 1 sort campaign · one-time</div>
+          <div class="fe-sub">Wk 1 sort campaign · one-time · ~30-50 expected</div>
         </div>
         <div class="funnel-entry">
           <div class="fe-num">Entry 2</div>
           <div class="fe-title">Founding LP</div>
-          <div class="fe-sub">Organic + newsletter + LinkedIn org</div>
-        </div>
-        <div class="funnel-entry fix">
-          <div class="fe-num">Entry 3 · FIX 1</div>
-          <div class="fe-title">LinkedIn paid leads</div>
-          <div class="fe-sub">$30/day · 6 weeks · ~$1,260</div>
+          <div class="fe-sub">Organic + newsletter + LinkedIn organic · ~20-40 expected</div>
         </div>
       </div>
 
@@ -311,7 +316,7 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
     <div class="section-eyebrow">The effort × impact matrix</div>
     <h2 class="section-h2">Do · Build · <em>Kill</em></h2>
     <div class="section-rule"></div>
-    <p class="section-lead">Every component in the original complex plan was scored against effort × impact. Result: 8 things ship in V1. 11 things deferred or killed.</p>
+    <p class="section-lead">Every component scored against effort × impact. Result: 7 things ship in V1. 12 things deferred or killed (including LinkedIn paid).</p>
 
     <div class="matrix">
       <div class="mx-cell mx-corner"></div>
@@ -327,7 +332,6 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
           <li>Founding LP /join/</li>
           <li>Journey A (Fast-Lane Push)</li>
           <li>Weekly newsletter slow cooker</li>
-          <li><strong>LinkedIn paid lead ads · FIX 1</strong></li>
           <li>Diana's manual approval queue</li>
           <li><strong>Monthly guide in Wk 1 newsletter · FIX 2</strong></li>
         </ul>
@@ -358,6 +362,7 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
           <li>Member spotlights</li>
           <li>YouTube dedicated LP</li>
           <li>Meta paid lead-magnet ads</li>
+          <li>LinkedIn paid lead ads</li>
           <li>64-tag taxonomy</li>
           <li>Refer-a-colleague campaign</li>
           <li>Mega-webinar separate from monthly</li>
@@ -382,7 +387,7 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
         <div class="kp-status">
           <div class="st-row"><span class="st-icon">✅</span>On track if cumulative by Jun 30 ≥ 75</div>
           <div class="st-row"><span class="st-icon">⚠️</span>At risk if 40-74</div>
-          <div class="st-row"><span class="st-icon">❌</span>Off track if &lt; 40</div>
+          <div class="st-row"><span class="st-icon">❌</span>Off track if &lt; 40 · acquisition gap unfilled</div>
         </div>
       </div>
 
@@ -393,17 +398,18 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
         <div class="kp-status">
           <div class="st-row"><span class="st-icon">✅</span>On track if 4-week avg ≥ 32%</div>
           <div class="st-row"><span class="st-icon">⚠️</span>At risk if 25-31%</div>
-          <div class="st-row"><span class="st-icon">❌</span>Off track if &lt; 25% → pause LinkedIn paid, audit subjects</div>
+          <div class="st-row"><span class="st-icon">❌</span>Off track if &lt; 25% · audit subject lines, sender rep</div>
         </div>
       </div>
 
       <div class="kpi-card">
-        <div class="kp-num">KPI 3 · FIX 4</div>
-        <div class="kp-name">Approval health (reframed)</div>
-        <div class="kp-target">Rejection rate <strong>stable and below 25%</strong>. Don't prescribe an approval target — Diana may be strict by design.</div>
+        <div class="kp-num">KPI 3</div>
+        <div class="kp-name">Approval conversion rate</div>
+        <div class="kp-target"><strong>Target: ≥ 80%</strong> approved by Diana. If below, fix the LP copy — not the acquisition.</div>
         <div class="kp-status">
-          <div class="st-row"><span class="st-icon">✅</span>Stable rejection rate</div>
-          <div class="st-row"><span class="st-icon">⚠️</span>If &gt; 25% → investigate cause: LP misalignment vs Diana criteria shift</div>
+          <div class="st-row"><span class="st-icon">✅</span>On track if ≥ 80%</div>
+          <div class="st-row"><span class="st-icon">⚠️</span>At risk if 60-79% (investigate rejection reasons)</div>
+          <div class="st-row"><span class="st-icon">❌</span>Off track if &lt; 60% (rewrite the LP)</div>
         </div>
       </div>
     </div>
@@ -499,10 +505,137 @@ body{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap
     </div>
   </div>
 
+  <!-- ============ ZOOM-IN: FOUNDING LP ============ -->
+  <div class="section">
+    <div class="section-eyebrow">Zoom-in 1 · The Founding LP</div>
+    <h2 class="section-h2">Every branch · <em>every recovery</em></h2>
+    <div class="section-rule"></div>
+    <p class="section-lead">Four things can happen when a doctor lands on <code>/join/</code>. Three are recoverable. One isn't. Percentages are realistic benchmarks — your real numbers will be known by Week 4.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px">
+      <!-- State 1 -->
+      <div style="border:1px solid var(--charcoal);background:var(--chartreuse);padding:18px 20px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--charcoal);margin-bottom:6px">★ Goal achieved · ~8-12%</div>
+        <div style="font-size:15px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:10px">Fully applied (email + card)</div>
+        <div style="font-size:11px;line-height:1.5;color:var(--charcoal)"><strong>Fires:</strong> WF-02 instantly · Tag <code>+state:applicant</code> · Admin alert → Diana · Holding email → applicant ("review in 5 business days") · Diana reviews via WF-03</div>
+      </div>
+      <!-- State 2 -->
+      <div style="border:1px solid var(--charcoal);background:var(--white);border-left:5px solid var(--warn);padding:18px 20px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--warn);margin-bottom:6px">⚡ Highest leverage · ~6-10%</div>
+        <div style="font-size:15px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:10px">Email captured · card dropped</div>
+        <div style="font-size:11px;line-height:1.5;color:var(--charcoal)"><strong>Fires:</strong> <strong style="color:var(--warn)">NEW WF-06 Founding LP Abandonment Sequence (10 emails over 21 days)</strong> · Tag <code>+event:application-started</code>, <code>+intent:hot</code> · Pre-filled link back to Step 2 · Benchmark: 15-25% recover within 7 days</div>
+      </div>
+      <!-- State 3 -->
+      <div style="border:1px solid var(--charcoal);background:var(--paper);padding:18px 20px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:6px">~ Slow cooker · ~15-25%</div>
+        <div style="font-size:15px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:10px">Gave email only (newsletter form)</div>
+        <div style="font-size:11px;line-height:1.5;color:var(--charcoal)"><strong>Fires:</strong> Newsletter slow cooker · Tag <code>+intent:warm</code>, <code>+src:founding-lp</code> · Welcome email + Founding offer CTA in each monthly newsletter · If they click Founding offer → auto-promote to Journey A</div>
+      </div>
+      <!-- State 4 -->
+      <div style="border:1px solid var(--charcoal);background:#fef2f2;border-left:5px solid var(--kill);padding:18px 20px">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--kill);margin-bottom:6px">✕ No data · ~55-70%</div>
+        <div style="font-size:15px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:10px">Bouncer (left, no email)</div>
+        <div style="font-size:11px;line-height:1.5;color:var(--charcoal)"><strong>Fires:</strong> Nothing direct — no contact in GHL · Pixel event only (Meta + LinkedIn) · Recovery via retargeting ads only · Reality: 5-8% return via retargeting (the other 92% are gone)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ WF-06 ABANDONMENT SEQUENCE ============ -->
+  <div class="section">
+    <div class="section-eyebrow">NEW · WF-06 Founding LP Abandonment Sequence</div>
+    <h2 class="section-h2">10 emails over 21 days · <em>recovers ~20% of card-droppers</em></h2>
+    <div class="section-rule"></div>
+    <p class="section-lead">Triggered when Step 1 is complete but Step 2 (card) is not, within 1 hour. All triggered per-user — does not count against the 4 newsletters/month cap. Anne writes 10 net-new emails (~20 hours of copywriting).</p>
+
+    <div style="border:1px solid var(--charcoal)">
+      <div style="display:grid;grid-template-columns:50px 80px 1.5fr 1.8fr 1fr;gap:0;background:var(--olive);color:var(--white);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase">
+        <div style="padding:12px 14px">#</div>
+        <div style="padding:12px 14px">When</div>
+        <div style="padding:12px 14px">Subject</div>
+        <div style="padding:12px 14px">Preview</div>
+        <div style="padding:12px 14px">Goal</div>
+      </div>
+      <div style="display:grid;grid-template-columns:50px 80px 1.5fr 1.8fr 1fr;gap:0;border-top:1px solid var(--line);background:#fbfbf6"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">1</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">+1h</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">One step left — your free year is waiting</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal);font-style:italic">Pre-filled card form. 60 seconds. No charge for 12 months.</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Recovery (fastest)</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 1.5fr 1.8fr 1fr;gap:0;border-top:1px solid var(--line)"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">2</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">+24h</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">Why we need the card on file now (not later)</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal);font-style:italic">So we don't have to ask at month 12 when you're busy.</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Card objection</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 1.5fr 1.8fr 1fr;gap:0;border-top:1px solid var(--line);background:#fbfbf6"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">3</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">Day 3</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">What you get for $0 in the next 12 months</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal);font-style:italic">52 newsletters, 12 guides, 12 webinars, directory, FB Group</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Itemized value</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 1.5fr 1.8fr 1fr;gap:0;border-top:1px solid var(--line)"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">4</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">Day 5</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">Why Dr. McKnight switched to DSC (60 sec)</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal);font-style:italic">"I always dreamed of escaping insurance constraints."</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Social proof</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 1.5fr 1.8fr 1fr;gap:0;border-top:1px solid var(--line);background:#fbfbf6"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">5</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">Day 7</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">5 reasons doctors hesitate (and why none apply)</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal);font-style:italic">Card security, time, "is it for me," patient pushback, partner approval</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Objection handler</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 1.5fr 1.8fr 1fr;gap:0;border-top:1px solid var(--line)"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">6</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">Day 9</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">The math — what 12 months of DSC actually saves you</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal);font-style:italic">DSC ($0) vs equivalent peer mentorship + templates ($X)</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Financial frame</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 1.5fr 1.8fr 1fr;gap:0;border-top:1px solid var(--line);background:#fbfbf6"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">7</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">Day 11</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">Diana on what physician autonomy actually costs</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal);font-style:italic">Diana POV · 3 paragraphs · personal voice</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Identity</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 1.5fr 1.8fr 1fr;gap:0;border-top:1px solid var(--line)"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">8</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">Day 14</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">What you're choosing right now (vs choosing later)</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal);font-style:italic">Today: free. After July 31: $1,164/yr. Cost of waiting visible.</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Cost of inaction</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 1.5fr 1.8fr 1fr;gap:0;border-top:1px solid var(--line);background:#fbfbf6"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">9</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">Day 17</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">[N] days until Founding closes · countdown</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal);font-style:italic">Final urgency. After July 31, this offer doesn't exist.</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Hard urgency</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 1.5fr 1.8fr 1fr;gap:0;border-top:1px solid var(--line)"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">10</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">Day 21</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">Last call — 24 more hours to complete</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal);font-style:italic">After 24h we remove your draft application.</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Last chance</div></div>
+    </div>
+  </div>
+
+  <!-- ============ ZOOM-IN: WEBINAR ============ -->
+  <div class="section">
+    <div class="section-eyebrow">Zoom-in 2 · The Webinar Engine</div>
+    <h2 class="section-h2">The parallel front door · <em>the highest-converting moment</em></h2>
+    <div class="section-rule"></div>
+    <p class="section-lead">Doctors who attend a Diana flagship webinar convert to Founding at 25-35% in the 48 hours after the event. No LP funnel comes close. The webinar is a 4-stage journey of its own.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px">
+      <div style="border:1px solid var(--charcoal);background:var(--white);padding:16px 18px;border-top:4px solid var(--chartreuse)">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:6px">Stage 1 · Capture · ~100%</div>
+        <div style="font-size:13px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:8px">Webinar registration page</div>
+        <div style="font-size:10.5px;line-height:1.5;color:var(--charcoal)">Email + name + specialty + state + "your question for Diana" (the hook). Separate URL from /join/.</div>
+      </div>
+      <div style="border:1px solid var(--charcoal);background:var(--white);padding:16px 18px;border-top:4px solid var(--chartreuse)">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--olive);margin-bottom:6px">Stage 2 · Reminders · ~40% attend</div>
+        <div style="font-size:13px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:8px">3 triggered reminders</div>
+        <div style="font-size:10.5px;line-height:1.5;color:var(--charcoal)">T-7 calendar invite · T-1 day-of · T-1h "starting soon" · If they asked a Q, Diana replies in 48h</div>
+      </div>
+      <div style="border:1px solid var(--charcoal);background:var(--chartreuse);padding:16px 18px;border-top:4px solid var(--charcoal)">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--charcoal);margin-bottom:6px">Stage 3 · Live · 25-35% apply</div>
+        <div style="font-size:13px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:8px">In-webinar Founding offer</div>
+        <div style="font-size:10.5px;line-height:1.5;color:var(--charcoal)">10-min in-webinar offer · pre-filled application opens · the single highest-conversion moment in the campaign</div>
+      </div>
+      <div style="border:1px solid var(--charcoal);background:var(--white);padding:16px 18px;border-top:4px solid var(--warn)">
+        <div style="font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--warn);margin-bottom:6px">Stage 4 · Post · +5-15%</div>
+        <div style="font-size:13px;font-weight:700;color:var(--charcoal);line-height:1.2;margin-bottom:8px">WF-07 Webinar Nurture</div>
+        <div style="font-size:10.5px;line-height:1.5;color:var(--charcoal)"><strong style="color:var(--warn)">NEW: 10-email nurture over 30 days</strong> · attendees + no-shows · converts the late deciders</div>
+      </div>
+    </div>
+
+    <div style="background:var(--charcoal);color:var(--white);padding:20px 24px;border-left:5px solid var(--chartreuse)">
+      <div style="font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--chartreuse);margin-bottom:8px">The math per Diana flagship event</div>
+      <div style="font-size:14px;line-height:1.6;color:var(--white)">250 registrants × 40% attendance = <strong style="color:var(--chartreuse)">100 live attendees</strong> × 30% conversion = <strong style="color:var(--chartreuse)">30 direct signups</strong> + 10 post-event recovery via WF-07 = <strong style="color:var(--chartreuse)">~40 Founding applications per event</strong>. Run 2 Diana flagships (Wk 6 + Wk 9 advertising) = <strong style="color:var(--chartreuse)">~80 signups · over 50% of the 150 target from one channel</strong>.</div>
+    </div>
+  </div>
+
+  <!-- ============ WF-07 WEBINAR NURTURE ============ -->
+  <div class="section">
+    <div class="section-eyebrow">NEW · WF-07 Webinar Nurture Sequence</div>
+    <h2 class="section-h2">10 emails over 30 days · <em>post-event conversion engine</em></h2>
+    <div class="section-rule"></div>
+    <p class="section-lead">Triggered T+1 day after the webinar (attendees AND no-shows). Voice alternates: Anne writes practical emails (2, 5, 6, 7, 8), Diana writes identity emails (1, 3, 4, 9, 10). Same CTA every email: [Apply for free Founding →]</p>
+
+    <div style="border:1px solid var(--charcoal)">
+      <div style="display:grid;grid-template-columns:50px 80px 2fr 1.6fr 90px;gap:0;background:var(--olive);color:var(--white);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase">
+        <div style="padding:12px 14px">#</div>
+        <div style="padding:12px 14px">When</div>
+        <div style="padding:12px 14px">Subject</div>
+        <div style="padding:12px 14px">Goal</div>
+        <div style="padding:12px 14px">Voice</div>
+      </div>
+      <div style="display:grid;grid-template-columns:50px 80px 2fr 1.6fr 90px;gap:0;border-top:1px solid var(--line);background:#fbfbf6"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">1</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">T+1</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">Attended: Your recording + Diana's offer<br /><span style="font-style:italic;font-weight:400;font-size:10.5px">No-show: We missed you · here's the recording</span></div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Recording + soft Founding mention</div><div style="padding:12px 14px;font-size:10.5px;color:var(--olive);font-weight:600;text-align:center">Diana</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 2fr 1.6fr 90px;gap:0;border-top:1px solid var(--line)"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">2</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">T+3</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">The most-asked question from the webinar — answered</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Continue the conversation</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal);text-align:center">Anne</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 2fr 1.6fr 90px;gap:0;border-top:1px solid var(--line);background:#fbfbf6"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">3</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">T+5</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">Diana on what physician autonomy actually means</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Identity reinforcement · POV</div><div style="padding:12px 14px;font-size:10.5px;color:var(--olive);font-weight:600;text-align:center">Diana</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 2fr 1.6fr 90px;gap:0;border-top:1px solid var(--line)"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">4</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">T+7</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">Why now (not next year): the math on waiting</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Urgency · Jul 31 deadline</div><div style="padding:12px 14px;font-size:10.5px;color:var(--olive);font-weight:600;text-align:center">Diana</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 2fr 1.6fr 90px;gap:0;border-top:1px solid var(--line);background:#fbfbf6"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">5</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">T+10</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">Dr. Lee's story · 6 months after she left insurance</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Member case study · vivid outcome</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal);text-align:center">Anne</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 2fr 1.6fr 90px;gap:0;border-top:1px solid var(--line)"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">6</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">T+13</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">DSC vs DPC vs Concierge: what makes specialty different</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Education · differentiation</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal);text-align:center">Anne</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 2fr 1.6fr 90px;gap:0;border-top:1px solid var(--line);background:#fbfbf6"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">7</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">T+16</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">Free this month: [current month's guide]</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Cross-promo · drop monthly guide here</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal);text-align:center">Anne</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 2fr 1.6fr 90px;gap:0;border-top:1px solid var(--line)"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">8</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">T+20</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">"But what about my Medicare patients?" — handled</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Top objection handler</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal);text-align:center">Anne</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 2fr 1.6fr 90px;gap:0;border-top:1px solid var(--line);background:#fbfbf6"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">9</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">T+25</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">[N] days until Founding closes · what you'll lose</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Hard urgency · cost of inaction</div><div style="padding:12px 14px;font-size:10.5px;color:var(--olive);font-weight:600;text-align:center">Diana</div></div>
+      <div style="display:grid;grid-template-columns:50px 80px 2fr 1.6fr 90px;gap:0;border-top:1px solid var(--line)"><div style="padding:12px 14px;font-family:monospace;color:var(--olive);font-weight:700;background:var(--paper);text-align:center">10</div><div style="padding:12px 14px;font-family:monospace;font-size:10.5px;color:var(--olive);font-weight:700">T+30</div><div style="padding:12px 14px;font-size:11px;color:var(--charcoal);font-weight:600">Last call before next webinar registration opens</div><div style="padding:12px 14px;font-size:10.5px;color:var(--charcoal)">Final push + soft re-route</div><div style="padding:12px 14px;font-size:10.5px;color:var(--olive);font-weight:600;text-align:center">Diana</div></div>
+    </div>
+  </div>
+
   <!-- ============ FOOTER ============ -->
   <div class="foot">
     <div class="wm">DSC Alliance · Brave New Media</div>
-    <div class="copy">Field Map 07 · v7 canonical · 2026-05-15<br />Replaces v4, v5, v6 · 4 best-judgment fixes flagged · override any by reply</div>
+    <div class="copy">Field Map 08 · v8 canonical · 2026-05-15<br />FIX 1 + FIX 4 removed · 2 fixes kept · 2 new 10-email sequences added (WF-06 LP abandonment + WF-07 webinar nurture)</div>
   </div>
 
 </section>
