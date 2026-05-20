@@ -1,0 +1,1216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>BNM × DSC Alliance — Workflows Map</title>
+<meta name="viewport" content="width=1600" />
+<style>
+  :root {
+    --ink: #1a1916;
+    --ink-2: #3a3833;
+    --ink-3: #6b6760;
+    --ink-4: #9a958c;
+    --paper: #f6f4ef;
+    --paper-2: #efece5;
+    --rule: #d9d4c8;
+    --rule-2: #c4beaf;
+
+    --bnm: #1f6b4a;          /* green — BNM */
+    --bnm-tint: #e3efe6;
+    --bnm-tint-2: #d2e6d7;
+    --bnm-ink: #143f2c;
+
+    --web: #b06b17;          /* amber — website team */
+    --web-tint: #f6e8d1;
+    --web-tint-2: #efd9b0;
+    --web-ink: #5e3a0d;
+
+    --a: #1f6b4a;            /* bucket A — automated */
+    --b: #8a6d1b;            /* bucket B — monitor */
+    --c: #a23b1e;            /* bucket C — human-powered */
+
+    --legacy: #6e5aa3;
+    --founding: #1f6b4a;
+    --standard: #2a6fa8;
+    --accel: #a23b1e;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--paper); color: var(--ink); }
+  body {
+    font-family: "Inter Tight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .mono { font-family: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace; }
+  .serif { font-family: "Source Serif 4", "Iowan Old Style", Georgia, serif; }
+
+  .poster {
+    width: 1600px;
+    margin: 0 auto;
+    padding: 56px 56px 80px;
+    background: var(--paper);
+  }
+
+  /* ── Masthead ───────────────────────────────────── */
+  .masthead {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 48px;
+    align-items: end;
+    padding-bottom: 18px;
+    border-bottom: 1.5px solid var(--ink);
+  }
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 14px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+  .eyebrow .dot {
+    width: 6px; height: 6px; border-radius: 50%; background: var(--ink);
+  }
+  h1 {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-weight: 500;
+    font-size: 64px;
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  h1 em { font-style: italic; color: var(--ink-3); font-weight: 400; }
+  .deck {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink-2);
+    max-width: 540px;
+  }
+  .meta {
+    display: flex;
+    gap: 32px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-top: 14px;
+  }
+  .meta b { color: var(--ink); font-weight: 600; letter-spacing: 0.06em; }
+
+  /* ── Section heading ───────────────────────────── */
+  .sec {
+    margin-top: 48px;
+  }
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+  .sec-num {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-style: italic;
+    color: var(--ink-3);
+    font-size: 22px;
+  }
+  .sec-title {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .sec-rule {
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+    align-self: center;
+  }
+  .sec-note {
+    font-size: 12px;
+    color: var(--ink-3);
+    max-width: 480px;
+  }
+
+  /* ── Tiers row ─────────────────────────────────── */
+  .tiers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .tier {
+    border: 1px solid var(--rule-2);
+    background: #fff;
+    padding: 16px 18px 18px;
+    position: relative;
+    border-top-width: 4px;
+  }
+  .tier.legacy   { border-top-color: var(--legacy); }
+  .tier.founding { border-top-color: var(--founding); background: var(--bnm-tint); }
+  .tier.standard { border-top-color: var(--standard); }
+  .tier.accel    { border-top-color: var(--accel); }
+  .tier .name {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+  .tier .price {
+    font-size: 11px;
+    color: var(--ink-3);
+    margin-top: 2px;
+    margin-bottom: 10px;
+  }
+  .tier .focus {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-3);
+    margin-bottom: 4px;
+  }
+  .tier .touch {
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--ink-2);
+  }
+  .tier .badge {
+    position: absolute;
+    top: 14px; right: 14px;
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 2px;
+  }
+  .badge.bnm  { background: var(--bnm); color: #fff; }
+  .badge.both { background: var(--web); color: #fff; }
+  .badge.web  { background: var(--web); color: #fff; }
+  .badge.light{ background: #fff; color: var(--ink-2); border: 1px solid var(--rule-2); }
+
+  /* ── Boundary band ─────────────────────────────── */
+  .boundary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .col {
+    border: 1px solid var(--rule-2);
+    padding: 18px 20px 18px;
+    background: #fff;
+  }
+  .col.bnm { background: var(--bnm-tint); border-color: var(--bnm-tint-2); }
+  .col.web { background: var(--web-tint); border-color: var(--web-tint-2); }
+  .col h3 {
+    margin: 0 0 4px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+  .col.bnm h3 { color: var(--bnm-ink); }
+  .col.web h3 { color: var(--web-ink); }
+  .col .sub {
+    font-size: 11px;
+    color: var(--ink-3);
+    margin-bottom: 12px;
+  }
+  .col ul {
+    margin: 0; padding: 0; list-style: none;
+    display: grid; gap: 6px;
+    font-size: 12.5px;
+    color: var(--ink-2);
+  }
+  .col li::before {
+    content: "—";
+    margin-right: 8px;
+    color: var(--ink-4);
+  }
+
+  /* ── Phase map grid ────────────────────────────── */
+  .legend {
+    display: flex; gap: 18px; align-items: center;
+    font-size: 11px; color: var(--ink-3);
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .swatch {
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .swatch i {
+    display: inline-block; width: 12px; height: 12px; border-radius: 2px;
+  }
+  .swatch.bnm i { background: var(--bnm); }
+  .swatch.web i { background: var(--web); }
+  .swatch.A   i { background: var(--a); }
+  .swatch.B   i { background: var(--b); }
+  .swatch.C   i { background: var(--c); }
+
+  .phases {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr 1fr 0.8fr 0.85fr;
+    gap: 12px;
+  }
+  .phase {
+    background: #fff;
+    border: 1px solid var(--rule-2);
+    display: flex; flex-direction: column;
+    min-height: 100%;
+  }
+  .phase-head {
+    padding: 12px 14px 10px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper-2);
+  }
+  .phase-num {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--ink-3);
+  }
+  .phase-name {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-top: 2px;
+  }
+  .phase-sub {
+    font-size: 11px;
+    color: var(--ink-3);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+  .phase-body {
+    padding: 10px 10px 12px;
+    display: grid;
+    gap: 8px;
+    flex: 1;
+  }
+
+  /* ── Workflow card ─────────────────────────────── */
+  .wf {
+    border: 1px solid var(--rule);
+    background: #fff;
+    padding: 8px 10px 9px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 8px;
+    align-items: start;
+  }
+  .wf .id {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink-3);
+    letter-spacing: 0.02em;
+    padding-top: 1px;
+  }
+  .wf .name {
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: -0.005em;
+    line-height: 1.3;
+  }
+  .wf .trig {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10px;
+    color: var(--ink-3);
+    margin-top: 3px;
+    line-height: 1.4;
+  }
+  .wf .do {
+    font-size: 11.5px;
+    color: var(--ink-2);
+    margin-top: 5px;
+    line-height: 1.4;
+  }
+  .wf .bucket {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #fff;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .wf .bucket.A { background: var(--a); }
+  .wf .bucket.B { background: var(--b); }
+  .wf .bucket.C { background: var(--c); }
+  .wf.bnm { border-left: 3px solid var(--bnm); }
+  .wf.web { border-left: 3px solid var(--web); background: var(--web-tint); }
+
+  .phase-note {
+    margin: 6px 4px 0;
+    padding: 8px 10px;
+    background: var(--web-tint);
+    border-left: 3px solid var(--web);
+    font-size: 10.5px;
+    color: var(--web-ink);
+    line-height: 1.45;
+  }
+  .phase-note b { color: var(--web-ink); }
+  .phase-note.bnm {
+    background: var(--bnm-tint);
+    border-left-color: var(--bnm);
+    color: var(--bnm-ink);
+  }
+
+  /* ── Timeline strip ─────────────────────────────── */
+  .timeline {
+    background: #fff;
+    border: 1px solid var(--rule-2);
+    padding: 22px 28px 30px;
+    position: relative;
+  }
+  .tl-title {
+    display: flex; align-items: baseline; gap: 14px;
+    margin-bottom: 22px;
+  }
+  .tl-title .h {
+    font-size: 16px; font-weight: 600;
+  }
+  .tl-title .s {
+    font-size: 11.5px; color: var(--ink-3);
+  }
+  .tl-track {
+    position: relative;
+    height: 220px;
+    margin: 0 8px;
+  }
+  .tl-axis {
+    position: absolute;
+    left: 0; right: 0; top: 120px;
+    height: 2px; background: var(--ink);
+  }
+  .tl-tick {
+    position: absolute;
+    top: 120px;
+    width: 1px;
+    background: var(--ink);
+    height: 8px;
+    transform: translateX(-0.5px);
+  }
+  .tl-label {
+    position: absolute;
+    top: 134px;
+    transform: translateX(-50%);
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10px;
+    color: var(--ink-3);
+    white-space: nowrap;
+    text-align: center;
+  }
+  .tl-label b { display: block; color: var(--ink); font-weight: 600; font-size: 11px;}
+  .tl-event {
+    position: absolute;
+    transform: translateX(-50%);
+    width: 200px;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.35;
+  }
+  .tl-event .dot {
+    width: 12px; height: 12px; border-radius: 50%;
+    margin: 0 auto 8px;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px var(--ink);
+  }
+  .tl-event.bnm .dot { background: var(--bnm); }
+  .tl-event.web .dot { background: var(--web); }
+  .tl-event .nm {
+    font-weight: 600;
+    font-size: 11.5px;
+  }
+  .tl-event.bnm .nm { color: var(--bnm-ink); }
+  .tl-event.web .nm { color: var(--web-ink); }
+  .tl-event .wfid {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 9.5px;
+    color: var(--ink-3);
+    margin-top: 2px;
+  }
+  .tl-event.top { top: 0; }
+  .tl-event.top .dot { margin-top: 0; }
+  .tl-event.top .nm { margin-top: 6px; }
+  .tl-event.bot { bottom: 28px; }
+  .tl-event.bot .stem {
+    width: 1px; height: 28px; background: var(--ink-4);
+    margin: 0 auto 6px;
+  }
+  .tl-event.top .stem {
+    width: 1px; height: 28px; background: var(--ink-4);
+    margin: 6px auto 0;
+  }
+
+  /* ── Handover buckets ──────────────────────────── */
+  .buckets {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr 1fr;
+    gap: 12px;
+  }
+  .bucket-card {
+    border: 1px solid var(--rule-2);
+    background: #fff;
+    padding: 18px 20px 18px;
+    border-top: 4px solid;
+    position: relative;
+  }
+  .bucket-card.A { border-top-color: var(--a); }
+  .bucket-card.B { border-top-color: var(--b); }
+  .bucket-card.C { border-top-color: var(--c); }
+  .bk-letter {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-style: italic;
+    font-size: 36px;
+    line-height: 1;
+    position: absolute;
+    top: 14px;
+    right: 18px;
+    color: var(--ink-4);
+  }
+  .bucket-card.A .bk-letter { color: var(--a); opacity: 0.75; }
+  .bucket-card.B .bk-letter { color: var(--b); opacity: 0.75; }
+  .bucket-card.C .bk-letter { color: var(--c); opacity: 0.75; }
+  .bk-title {
+    font-size: 16px; font-weight: 600; letter-spacing: -0.01em;
+  }
+  .bk-sub {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-3);
+    margin-top: 2px;
+  }
+  .bk-count {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: 22px;
+    margin-top: 14px;
+    font-weight: 500;
+  }
+  .bk-count b { font-size: 38px; font-style: italic; }
+  .bk-count .of { color: var(--ink-3); font-style: italic; }
+  .bk-time {
+    font-size: 12px;
+    color: var(--ink-2);
+    margin-top: 4px;
+    margin-bottom: 14px;
+    line-height: 1.45;
+  }
+  .bk-list {
+    margin: 0; padding: 0; list-style: none;
+    display: grid; gap: 5px;
+    font-size: 11.5px;
+    border-top: 1px dashed var(--rule);
+    padding-top: 10px;
+  }
+  .bk-list li {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 6px;
+    align-items: baseline;
+  }
+  .bk-list .wfid {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 10.5px;
+    color: var(--ink-3);
+    font-weight: 600;
+  }
+  .bk-list .wnm { color: var(--ink-2); }
+
+  /* ── Decisions ─────────────────────────────────── */
+  .decisions {
+    border: 1px solid var(--ink);
+    background: var(--paper-2);
+    padding: 22px 28px 26px;
+  }
+  .decisions h3 {
+    margin: 0 0 4px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .decisions .sub {
+    font-size: 12px; color: var(--ink-3);
+    margin-bottom: 16px;
+  }
+  .dec-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .dec {
+    background: #fff;
+    border: 1px solid var(--rule-2);
+    padding: 12px 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .dec .n {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-style: italic;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--ink-4);
+  }
+  .dec .t {
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .dec .tag {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 9.5px;
+    color: var(--ink-3);
+    letter-spacing: 0.04em;
+    margin-top: auto;
+    padding-top: 6px;
+    text-transform: uppercase;
+  }
+
+  /* ── Foot ─────────────────────────────────────── */
+  .foot {
+    margin-top: 36px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    font-size: 10.5px;
+    color: var(--ink-3);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .foot b { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="poster">
+
+  <!-- ── MASTHEAD ──────────────────────────────────────── -->
+  <header class="masthead">
+    <div>
+      <div class="eyebrow">
+        <span class="dot"></span>
+        <span>Brave New Media × DSC Alliance</span>
+        <span>·</span>
+        <span>Workflow Atlas</span>
+        <span>·</span>
+        <span>V1.0 — 19 May 2026</span>
+      </div>
+      <h1>The 25-workflow map<br/><em>and what survives when BNM walks away.</em></h1>
+    </div>
+    <div>
+      <div class="deck">
+        A single picture of every marketing workflow we operate in GHL — who owns it,
+        which member tier it serves, when it fires across the member lifecycle, and what
+        kind of attention it needs once the sprint ends.
+      </div>
+      <div class="meta">
+        <span><b>25</b> workflows</span>
+        <span><b>5</b> phases</span>
+        <span><b>3</b> handover buckets</span>
+        <span><b>2</b> owners</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── 1. WHO WE'RE TALKING TO ───────────────────────── -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-num">i.</span>
+      <span class="sec-title">Who we're talking to</span>
+      <span class="sec-rule"></span>
+      <span class="sec-note">Four membership tiers. Each gets a different marketing posture from BNM.</span>
+    </div>
+
+    <div class="tiers">
+      <div class="tier legacy">
+        <span class="badge light">Light touch</span>
+        <div class="name">Legacy</div>
+        <div class="price mono">$420 / yr · grandfathered, locked for life</div>
+        <div class="focus">BNM posture</div>
+        <div class="touch">Monthly content drop. Pre-launch differentiation note before any Founding campaign goes public. <b>Never</b> invited to Founding offers.</div>
+      </div>
+
+      <div class="tier founding">
+        <span class="badge bnm">BNM heavy</span>
+        <div class="name">Founding</div>
+        <div class="price mono">Free 12 mo · then $87/mo locked · capped cohort</div>
+        <div class="focus">BNM posture</div>
+        <div class="touch">Heaviest acquisition focus. Capture → nurture → conversion → onboarding from Day 3 → upgrade nudges from Day 300.</div>
+      </div>
+
+      <div class="tier standard">
+        <span class="badge bnm">BNM</span>
+        <div class="name">Standard Alliance</div>
+        <div class="price mono">$97/mo · post-Founding entry</div>
+        <div class="focus">BNM posture</div>
+        <div class="touch">Post-Founding sales channel. Different narrative: full benefits from day one, no free year. Sold on value, not scarcity.</div>
+      </div>
+
+      <div class="tier accel">
+        <span class="badge both">BNM + Web</span>
+        <div class="name">Accelerator — DSC Ready</div>
+        <div class="price mono">$597/mo · 30-seat, application-screened</div>
+        <div class="focus">BNM posture</div>
+        <div class="touch">Premium pipeline. BNM produces qualification content + webinar pitches. <b>Website team</b> handles enrollment and cohort admin.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2. THE BOUNDARY ───────────────────────────────── -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-num">ii.</span>
+      <span class="sec-title">The boundary — no email overlaps, ever</span>
+      <span class="sec-rule"></span>
+      <span class="sec-note">Two consent records, two rail systems. Unsubscribing from one does not unsubscribe from the other.</span>
+    </div>
+
+    <div class="boundary">
+      <div class="col bnm">
+        <h3>BNM (in GHL)</h3>
+        <div class="sub">Acquisition, nurture, content marketing, post-approval engagement</div>
+        <ul>
+          <li>Newsletter, lead magnets, webinars</li>
+          <li>Cart recovery before payment</li>
+          <li>Source tracking, segmentation, content nurture</li>
+          <li>Ongoing content drops to members + monthly member newsletter</li>
+          <li>Member spotlight prompts (photo / video uploads)</li>
+          <li>Upgrade nudges (Founding → Alliance) + re-engagement</li>
+        </ul>
+      </div>
+      <div class="col web">
+        <h3>Website team</h3>
+        <div class="sub">Platform, paid lifecycle, transactional</div>
+        <ul>
+          <li>Welcome-to-membership, profile setup &amp; updates</li>
+          <li>Renewals, payment failures, password resets</li>
+          <li>Admin approval emails &amp; member portal access</li>
+          <li>Account creation, login, profile change confirmations</li>
+          <li>Stripe payment events, course purchase access</li>
+          <li>Setup Intent on /join/ Step 2 (card on file)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 3. THE 25 WORKFLOWS ───────────────────────────── -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-num">iii.</span>
+      <span class="sec-title">The 25 workflows, by phase</span>
+      <span class="sec-rule"></span>
+    </div>
+
+    <div class="legend">
+      <span class="swatch bnm"><i></i> BNM-owned in GHL</span>
+      <span class="swatch web"><i></i> Website-team boundary note</span>
+      <span style="opacity:0.4">|</span>
+      <span class="swatch A"><i></i> A · fully automated</span>
+      <span class="swatch B"><i></i> B · weekly monitor</span>
+      <span class="swatch C"><i></i> C · active intervention</span>
+      <span style="opacity:0.4">|</span>
+      <span class="mono" style="font-size:10.5px;">trigger formatted in mono · description in body text</span>
+    </div>
+
+    <div class="phases">
+
+      <!-- ── PHASE 1 ── -->
+      <div class="phase">
+        <div class="phase-head">
+          <div class="phase-num">Phase 1</div>
+          <div class="phase-name">Lead capture &amp; source tracking</div>
+          <div class="phase-sub">Eight entry points. Every contact lands here first; each gets a source tag stamped.</div>
+        </div>
+        <div class="phase-body">
+          <div class="wf bnm">
+            <span class="id">01</span>
+            <div>
+              <div class="name">Newsletter Welcome <span class="bucket A">A</span></div>
+              <div class="trig">trig · footer form submission</div>
+              <div class="do">Tag: src:newsletter-footer · consent:newsletter-yes · flow:branch-n</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">02</span>
+            <div>
+              <div class="name">YouTube Source Capture <span class="bucket A">A</span></div>
+              <div class="trig">trig · /join/?src=yt — Step 1 submit</div>
+              <div class="do">Tag: src:youtube · channel:diana-yt</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">03</span>
+            <div>
+              <div class="name">LinkedIn Source Capture <span class="bucket A">A</span></div>
+              <div class="trig">trig · ?src=li on any form</div>
+              <div class="do">Tag: src:linkedin · channel:diana-li</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">04</span>
+            <div>
+              <div class="name">Facebook Group Conversion <span class="bucket A">A</span></div>
+              <div class="trig">trig · ?src=fb-group on any form</div>
+              <div class="do">Tag: src:facebook-group</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">05</span>
+            <div>
+              <div class="name">Podcast Source Capture <span class="bucket A">A</span></div>
+              <div class="trig">trig · ?src=podcast on any form</div>
+              <div class="do">Tag: src:podcast</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">06</span>
+            <div>
+              <div class="name">/join/ Step 1 Submitted <span class="bucket A">A</span></div>
+              <div class="trig">trig · email + name + specialty + state</div>
+              <div class="do">Tag: src:founding-lp · event:application-started · spec:{specialty}</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">07</span>
+            <div>
+              <div class="name">Lead Magnet Download <span class="bucket B">B</span></div>
+              <div class="trig">trig · gated form on /free-resources/</div>
+              <div class="do">Tag: intent:warm · src:freebie-{slug} · flow:branch-l</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">08</span>
+            <div>
+              <div class="name">Webinar Registration <span class="bucket B">B</span></div>
+              <div class="trig">trig · /webinar/{id}/ form</div>
+              <div class="do">Tag: src:webinar-{type} · event:webinar-registered · flow:branch-w</div>
+            </div>
+          </div>
+
+          <div class="phase-note">
+            <b>Boundary:</b> /join/ Step 2 (card on file) is website-team territory. Stripe Setup Intent fires their workflows. GHL only receives the webhook so BNM knows who became an applicant — no courtesy email, no admin alert from our side.
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PHASE 2 ── -->
+      <div class="phase">
+        <div class="phase-head">
+          <div class="phase-num">Phase 2</div>
+          <div class="phase-name">Active nurture sequences</div>
+          <div class="phase-sub">Self-contained sequences with exit conditions. None overlap with the website team's emails.</div>
+        </div>
+        <div class="phase-body">
+          <div class="wf bnm">
+            <span class="id">09</span>
+            <div>
+              <div class="name">Cart Recovery <span class="bucket A">A</span></div>
+              <div class="trig">trig · Step 1 done + no Step 2 in 60 min</div>
+              <div class="do">10 emails over 21 days. Magic link back to Step 2. Exits when Step 2 fires (handoff to web) or at Day 21.</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">10</span>
+            <div>
+              <div class="name">Webinar Pre-Event Reminders <span class="bucket A">A</span></div>
+              <div class="trig">trig · webinar-registered tag applied</div>
+              <div class="do">3 emails (T-7d, T-1d, T-1h) + calendar invite.</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">11</span>
+            <div>
+              <div class="name">Webinar Post-Event Nurture <span class="bucket A">A</span></div>
+              <div class="trig">trig · Zoom webhook (attended / no-show)</div>
+              <div class="do">10 emails over 27 days. Two opener variants, converges by Email 3.</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">12</span>
+            <div>
+              <div class="name">Lead Magnet Nurture <span class="bucket A">A</span></div>
+              <div class="trig">trig · freebie-download tag applied</div>
+              <div class="do">3 emails over 14 days. Pulls toward the Founding offer.</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">13</span>
+            <div>
+              <div class="name">Newsletter Slow Cooker <span class="bucket C">C</span></div>
+              <div class="trig">trig · default — no active sequence</div>
+              <div class="do">Weekly newsletter. Monthly Founding offer module embedded. <b>Needs a human</b> — see Bucket C.</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">14</span>
+            <div>
+              <div class="name">800-List Sort <span class="bucket B">B</span></div>
+              <div class="trig">trig · manual — one-time at launch</div>
+              <div class="do">2-touch segmentation: sorts existing list into hot / warm / cold.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PHASE 3 ── -->
+      <div class="phase">
+        <div class="phase-head">
+          <div class="phase-num">Phase 3</div>
+          <div class="phase-name">Post-approval engagement</div>
+          <div class="phase-sub">Web team sends Welcome on Day 0. BNM picks up the engagement layer from Day 3.</div>
+        </div>
+        <div class="phase-body">
+          <div class="wf bnm">
+            <span class="id">15</span>
+            <div>
+              <div class="name">Member Onboarding Nurture <span class="bucket A">A</span></div>
+              <div class="trig">trig · state:active-founding (set by web team)</div>
+              <div class="do">5 content emails: Day 3, 7, 14, 30, 60 — community intro, content access, first webinar invite, upgrade preview.</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">16</span>
+            <div>
+              <div class="name">Member Newsletter <span class="bucket C">C</span></div>
+              <div class="trig">trig · state:active-{tier} present</div>
+              <div class="do">Weekly newsletter to a member-specific list, separate from the prospect newsletter. <b>Needs a human</b>.</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">17</span>
+            <div>
+              <div class="name">Member Upload Prompts <span class="bucket C">C</span></div>
+              <div class="trig">trig · lifecycle Day 14, 60, 120, 180</div>
+              <div class="do">Prompts for photo / video. File lands in shared Drive, contact tagged <span class="mono">uploaded</span>. <b>Needs a human</b> to turn uploads into social.</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">18</span>
+            <div>
+              <div class="name">Upgrade Nudge · Founding → Alliance <span class="bucket A">A</span></div>
+              <div class="trig">trig · Day 300 of Founding lifecycle</div>
+              <div class="do">3 emails over 30 days framing $87 vs $97 lock-in.</div>
+            </div>
+          </div>
+
+          <div class="phase-note">
+            <b>Critical boundary:</b> the website team sends the renewal reminder at <span class="mono">Day 358</span> and the renewal confirmation at <span class="mono">Day 365</span>. BNM stops upgrade nudges at <span class="mono">Day 330</span> so the contact gets clean air before the transactional renewal flow. No overlap.
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PHASE 4 ── -->
+      <div class="phase">
+        <div class="phase-head">
+          <div class="phase-num">Phase 4</div>
+          <div class="phase-name">Re-engagement &amp; hygiene</div>
+          <div class="phase-sub">Standard GHL handling for quiet contacts. Owned by BNM because these sequences live in BNM's lists.</div>
+        </div>
+        <div class="phase-body">
+          <div class="wf bnm">
+            <span class="id">19</span>
+            <div>
+              <div class="name">Engagement Score Updates <span class="bucket A">A</span></div>
+              <div class="trig">trig · any open, click or event in BNM email</div>
+              <div class="do">Increments engagement_score. Updates intent tag if threshold crossed.</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">20</span>
+            <div>
+              <div class="name">Re-Engagement Sequence <span class="bucket A">A</span></div>
+              <div class="trig">trig · 60 days, no opens / clicks</div>
+              <div class="do">Reduces to monthly. At 90 days, one re-engagement email, then archive.</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">21</span>
+            <div>
+              <div class="name">Newsletter-Only Downgrade <span class="bucket A">A</span></div>
+              <div class="trig">trig · click "just send the newsletter"</div>
+              <div class="do">Removes active sequence tag, keeps newsletter consent, moves to Branch N.</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">22</span>
+            <div>
+              <div class="name">Unsubscribe Handler <span class="bucket A">A</span></div>
+              <div class="trig">trig · click unsubscribe in any BNM email</div>
+              <div class="do">Sets state:suppressed, removes all marketing consent, halts BNM sequences.</div>
+            </div>
+          </div>
+
+          <div class="phase-note">
+            <b>Two consent records.</b> Unsubscribes on BNM emails do <b>not</b> cancel the website team's transactional emails. Payment-failure notices, renewal confirmations and password resets keep firing — legally required, operationally necessary.
+          </div>
+        </div>
+      </div>
+
+      <!-- ── PHASE 5 ── -->
+      <div class="phase">
+        <div class="phase-head">
+          <div class="phase-num">Phase 5</div>
+          <div class="phase-name">Campaign-specific (time-limited)</div>
+          <div class="phase-sub">Built once. Activated for a window. Deactivated when the window closes.</div>
+        </div>
+        <div class="phase-body">
+          <div class="wf bnm">
+            <span class="id">23</span>
+            <div>
+              <div class="name">Final-Week Countdown <span class="bucket B">B</span></div>
+              <div class="trig">trig · final 7 days before Founding close</div>
+              <div class="do">Daily Mon→Sun countdown emails, urgency-driven. Deactivated after deadline.</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">24</span>
+            <div>
+              <div class="name">Win-Back · Founding Non-Converters <span class="bucket B">B</span></div>
+              <div class="trig">trig · Day 31 post-deadline (1 Aug)</div>
+              <div class="do">6 emails over 30 days. Offers Alliance at standard rate. Exits on conversion or Day 30.</div>
+            </div>
+          </div>
+          <div class="wf bnm">
+            <span class="id">25</span>
+            <div>
+              <div class="name">Member Referral Capture <span class="bucket A">A</span></div>
+              <div class="trig">trig · /join/?ref={member_id}</div>
+              <div class="do">Stamps referring member ID on new contact. Swaps in personalised welcome.</div>
+            </div>
+          </div>
+
+          <div class="phase-note bnm">
+            <b>Note:</b> these three are dormant by default. WF-23 lights up in the run-up to cohort close; WF-24 fires the day after; WF-25 is always-on but only activates when a referral link is used.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── 4. LIFECYCLE TIMELINE ─────────────────────────── -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-num">iv.</span>
+      <span class="sec-title">A Founding member, end to end</span>
+      <span class="sec-rule"></span>
+      <span class="sec-note">The handoff in time — read left to right.</span>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-title">
+        <span class="h">Founding member lifecycle · day-by-day</span>
+        <span class="s">Green = BNM (GHL). Amber = website team.</span>
+      </div>
+
+      <div class="tl-track">
+        <div class="tl-axis"></div>
+
+        <!-- ticks + labels -->
+        <div class="tl-tick" style="left:3%;"></div>
+        <div class="tl-label" style="left:3%;"><b>Pre-launch</b>Capture</div>
+
+        <div class="tl-tick" style="left:14%;"></div>
+        <div class="tl-label" style="left:14%;"><b>Day −1 → 0</b>Apply</div>
+
+        <div class="tl-tick" style="left:24%;"></div>
+        <div class="tl-label" style="left:24%;"><b>Day 0</b>Approval</div>
+
+        <div class="tl-tick" style="left:34%;"></div>
+        <div class="tl-label" style="left:34%;"><b>Day 3 → 60</b>Onboarding</div>
+
+        <div class="tl-tick" style="left:50%;"></div>
+        <div class="tl-label" style="left:50%;"><b>Day 14 → 180</b>Content prompts</div>
+
+        <div class="tl-tick" style="left:68%;"></div>
+        <div class="tl-label" style="left:68%;"><b>Day 300 → 330</b>Upgrade window</div>
+
+        <div class="tl-tick" style="left:84%;"></div>
+        <div class="tl-label" style="left:84%;"><b>Day 358</b>Renewal nudge</div>
+
+        <div class="tl-tick" style="left:96%;"></div>
+        <div class="tl-label" style="left:96%;"><b>Day 365</b>Renewal</div>
+
+        <!-- events above -->
+        <div class="tl-event top bnm" style="left:3%;">
+          <div class="dot"></div>
+          <div class="nm">Source capture + cart recovery</div>
+          <div class="wfid">WF 01–09, 12</div>
+          <div class="stem"></div>
+        </div>
+        <div class="tl-event top bnm" style="left:34%;">
+          <div class="dot"></div>
+          <div class="nm">Member Onboarding Nurture</div>
+          <div class="wfid">WF 15 · Day 3, 7, 14, 30, 60</div>
+          <div class="stem"></div>
+        </div>
+        <div class="tl-event top bnm" style="left:68%;">
+          <div class="dot"></div>
+          <div class="nm">Founding → Alliance upgrade nudge</div>
+          <div class="wfid">WF 18 · 3 emails over 30 days</div>
+          <div class="stem"></div>
+        </div>
+
+        <!-- events below -->
+        <div class="tl-event bot web" style="left:14%;">
+          <div class="stem"></div>
+          <div class="dot"></div>
+          <div class="nm">Stripe Setup Intent + admin approval</div>
+          <div class="wfid">Website team · /join/ Step 2</div>
+        </div>
+        <div class="tl-event bot web" style="left:24%;">
+          <div class="stem"></div>
+          <div class="dot"></div>
+          <div class="nm">Welcome to membership email</div>
+          <div class="wfid">Website team · Day 0</div>
+        </div>
+        <div class="tl-event bot bnm" style="left:50%;">
+          <div class="stem"></div>
+          <div class="dot"></div>
+          <div class="nm">Photo / video upload prompts</div>
+          <div class="wfid">WF 17 · Day 14, 60, 120, 180</div>
+        </div>
+        <div class="tl-event bot web" style="left:84%;">
+          <div class="stem"></div>
+          <div class="dot"></div>
+          <div class="nm">Renewal reminder</div>
+          <div class="wfid">Website team · Day 358</div>
+        </div>
+        <div class="tl-event bot web" style="left:96%;">
+          <div class="stem"></div>
+          <div class="dot"></div>
+          <div class="nm">Renewal confirmation · $87/mo locked</div>
+          <div class="wfid">Website team · Day 365</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. HANDOVER BUCKETS ───────────────────────────── -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-num">v.</span>
+      <span class="sec-title">What survives when BNM walks away</span>
+      <span class="sec-rule"></span>
+      <span class="sec-note">Every workflow above falls into exactly one of three buckets. Read this with the dots in §iii.</span>
+    </div>
+
+    <div class="buckets">
+      <div class="bucket-card A">
+        <span class="bk-letter">A</span>
+        <div class="bk-title">Fully automated</div>
+        <div class="bk-sub">No human ever needed</div>
+        <div class="bk-count"><b>14</b> <span class="of">/ 25 workflows</span></div>
+        <div class="bk-time">Stamped, sealed, self-running. The only reason to touch them is to change copy or kill the flow.</div>
+        <ul class="bk-list">
+          <li><span class="wfid">WF-01</span><span class="wnm">Newsletter Welcome</span></li>
+          <li><span class="wfid">WF-02–05</span><span class="wnm">Source capture · YT, LI, FB, Podcast</span></li>
+          <li><span class="wfid">WF-06</span><span class="wnm">/join/ Step 1 Submitted</span></li>
+          <li><span class="wfid">WF-09</span><span class="wnm">Cart Recovery</span></li>
+          <li><span class="wfid">WF-10</span><span class="wnm">Webinar Pre-Event Reminders</span></li>
+          <li><span class="wfid">WF-11</span><span class="wnm">Webinar Post-Event Nurture</span></li>
+          <li><span class="wfid">WF-12</span><span class="wnm">Lead Magnet Nurture</span></li>
+          <li><span class="wfid">WF-15</span><span class="wnm">Member Onboarding Nurture</span></li>
+          <li><span class="wfid">WF-18</span><span class="wnm">Founding → Alliance upgrade nudge</span></li>
+          <li><span class="wfid">WF-19</span><span class="wnm">Engagement Score Updates</span></li>
+          <li><span class="wfid">WF-20</span><span class="wnm">Re-Engagement Sequence</span></li>
+          <li><span class="wfid">WF-21</span><span class="wnm">Newsletter-Only Downgrade</span></li>
+          <li><span class="wfid">WF-22</span><span class="wnm">Unsubscribe Handler</span></li>
+          <li><span class="wfid">WF-25</span><span class="wnm">Member Referral Capture</span></li>
+        </ul>
+      </div>
+
+      <div class="bucket-card B">
+        <span class="bk-letter">B</span>
+        <div class="bk-title">Monitoring only</div>
+        <div class="bk-sub">A weekly glance — ~30 min/wk</div>
+        <div class="bk-count"><b>6</b> <span class="of">/ 25 workflows</span></div>
+        <div class="bk-time">Diana, a VA, or a junior marketer scans the dashboard once a week. Trainable in one 45-min session.</div>
+        <ul class="bk-list">
+          <li><span class="wfid">WF-07</span><span class="wnm">Lead Magnet Download — flag if form completion < 25%</span></li>
+          <li><span class="wfid">WF-08</span><span class="wnm">Webinar Registration — flag if page→reg < 35%</span></li>
+          <li><span class="wfid">WF-13</span><span class="wnm">Newsletter Slow Cooker — flag if open rate < 30%</span></li>
+          <li><span class="wfid">WF-14</span><span class="wnm">800-List Sort — dormant; reactivate on new bulk list</span></li>
+          <li><span class="wfid">WF-23</span><span class="wnm">Final-Week Countdown — flag if click rate < 15%</span></li>
+          <li><span class="wfid">WF-24</span><span class="wnm">Win-Back Sequence — flag if conversion < 5%</span></li>
+        </ul>
+      </div>
+
+      <div class="bucket-card C">
+        <span class="bk-letter">C</span>
+        <div class="bk-title">Active intervention</div>
+        <div class="bk-sub">Human production · 8–10 hrs/wk</div>
+        <div class="bk-count"><b>3</b> <span class="of">/ 25 workflows</span></div>
+        <div class="bk-time">The automation has nothing to deliver without a human producing the content. This is what the <b>Month 3 retainer ($1,600/mo)</b> covers — drop it and these go dark first.</div>
+        <ul class="bk-list">
+          <li><span class="wfid">WF-13</span><span class="wnm">Newsletter Slow Cooker — write 1× per week</span></li>
+          <li><span class="wfid">WF-16</span><span class="wnm">Member Newsletter — 1× per month</span></li>
+          <li><span class="wfid">WF-17</span><span class="wnm">Member Upload Prompts — weekly batch review &amp; social repurposing</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. DECISIONS ──────────────────────────────────── -->
+  <section class="sec">
+    <div class="sec-head">
+      <span class="sec-num">vi.</span>
+      <span class="sec-title">Decisions to lock with the website team before launch</span>
+      <span class="sec-rule"></span>
+    </div>
+
+    <div class="decisions">
+      <h3>Five things that need a yes from the web team in writing.</h3>
+      <div class="sub">If any one of these is wrong on launch day, two systems will message the same contact in the same week without either side knowing.</div>
+
+      <div class="dec-grid">
+        <div class="dec">
+          <span class="n">01</span>
+          <span class="t">Confirm <b>Cart Recovery (WF-09)</b> is BNM-owned — the website team is <b>not</b> also sending recovery emails on Step 2 abandonment.</span>
+          <span class="tag">Owner · WF-09</span>
+        </div>
+        <div class="dec">
+          <span class="n">02</span>
+          <span class="t">Confirm the website team's <b>Founding Welcome</b> fires before BNM's <b>Onboarding Nurture</b> — Day 3 start gives a clean 3-day buffer.</span>
+          <span class="tag">Timing · WF-15</span>
+        </div>
+        <div class="dec">
+          <span class="n">03</span>
+          <span class="t">Confirm <b>two consent records</b> exist: BNM marketing + web transactional. Unsubscribing from one does <b>not</b> unsubscribe from the other.</span>
+          <span class="tag">Consent · WF-22</span>
+        </div>
+        <div class="dec">
+          <span class="n">04</span>
+          <span class="t">Confirm <b>webhook routing</b>: Stripe → web backend → GHL, or Stripe → GHL directly. WF-06 tags and the WF-15 trigger depend on this.</span>
+          <span class="tag">Webhooks · WF-06, 15</span>
+        </div>
+        <div class="dec">
+          <span class="n">05</span>
+          <span class="t">Confirm <b>Member Upload Prompts (WF-17)</b> are BNM territory — the website team is <b>not</b> also asking members for content uploads.</span>
+          <span class="tag">Owner · WF-17</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOT ──────────────────────────────────────────── -->
+  <footer class="foot">
+    <span>Brave New Media · <b>Anne Becheru</b> · <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6d0c0303082d0f1f0c1b084003081a430e0200">[email&#160;protected]</a></span>
+    <span>Source of truth for what BNM operates in GHL · Web team owns a parallel doc</span>
+    <span><b>V1.0</b> · 19 May 2026</span>
+  </footer>
+
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

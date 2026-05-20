@@ -1,5 +1,8 @@
-# DSC Alliance Journey Map
+# DSC Alliance — Visual Maps
 
-Visual journey map for DSC Alliance — Founding member acquisition and engagement flow.
+Public visual maps for DSC Alliance.
 
-Live: https://becheruanne-prog.github.io/DSCjourneymap/
+- **Journey Map** — Founding member acquisition and engagement flow: https://becheruanne-prog.github.io/DSCjourneymap/
+- **Flow Map** — BNM workflows map (tagging flows, sequences, lifecycle): https://becheruanne-prog.github.io/DSCjourneymap/flow-map.html
+
+*Attribution: Brave New Media · prepared by Anne Becheru*
